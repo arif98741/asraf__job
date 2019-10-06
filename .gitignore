@@ -1,0 +1,9 @@
+.phpintel
+.idea
+.editorconfig
+application/logs/*
+works/*
+*.zip
+*.iml
+system/cache/*
+uploads
