@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$route['default_controller'] 	 = 'publicview';
+$route['default_controller'] 	 = 'home';
 
 /*
 !---------------------------------------------------
 ! 	Admin
 !---------------------------------------------------
 */
+/*
 $route['admin'] 			= 'admin/admin/index';
 $route['admin/dashboard'] 	= 'admin/admin/dashboard';
 $route['admin/add-job'] 	= 'job/add_job';
@@ -64,19 +65,22 @@ $route['jobs/job-type/(:any)']			= 'search/jobs_type/$1';
 $route['jobs/search_result/(:any)']	    = 'search/search_result';
 
 
-/*
+
 	!-------------------------------------------
 	! Employee
 	!-------------------------------------------
-*/
-$route['registration']	   		= 'employee/registration';	
+
 $route['employee/profle']	   	= 'employee/profile';	
 $route['scholarship']	   		= "publicview/scholarship";	
 $route['scholarship/apply/(:num)']	 = "publicview/scholarship_apply/$1";	
 
 
 
-$route['recruiter/all']	 = "recruiter/all_recruiters";	
+$route['recruiter/all']	 = "recruiter/all_recruiters";	*/
+
+$route['login']	  				= 'login/index';	
+$route['employee_registration']	  = 'Seeker/Seeker/registration';	
+$route['provider_registration']	  = 'company/company/registration';	
 
 $route['404_override'] 		   = 'error404'; //override by controller
 $route['translate_uri_dashes'] = FALSE;
