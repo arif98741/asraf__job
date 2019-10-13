@@ -54,16 +54,31 @@ class Company extends CI_Controller
             ));
             $insert_id = $this->db->insert_id();
 
-            $this->session->set_userdata(array(
-                'seeker'            => true,
-                'seeker_id'         => $insert_id,
-                'seeker_company'    => $this->input->post('company_name'),
-                'seeker_full_name'  => $this->input->post('full_name')
-            ));
+            $session  = array(
+                    'company'        => true,
+                    'company_id'     => $insert_id,
+                    'company_name'   => $this->input->post('company_name'),
+                    'company_author'   => $this->input->post('full_name'),
+                    'company_email'  =>$this->input->post('email'),
+            );
+           $this->session->set_userdata($session);
             $this->session->set_flashdata('success', 'Registered successfully');
             redirect(base_url());
         }
       
+    }
+
+    /*
+    !--------------------------------------------------------
+    !      Company Logout
+    !--------------------------------------------------------
+    */
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('success', 'Logged out successfully');
+        redirect(base_url());
+
     }
 
 }

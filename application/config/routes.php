@@ -78,9 +78,13 @@ $route['scholarship/apply/(:num)']	 = "publicview/scholarship_apply/$1";
 
 $route['recruiter/all']	 = "recruiter/all_recruiters";	*/
 
-$route['login']	  				= 'login/index';	
-$route['employee_registration']	  = 'Seeker/Seeker/registration';	
+$route['login']	  					= 'login/index';	
+$route['seeker/registration']	  = 'seeker/seeker/registration';	
 $route['provider_registration']	  = 'company/company/registration';	
+$route['company/logout']	  	= 'company/company/logout';	
+$route['seeker/logout']	  		= 'seeker/seeker/logout';	
+
+
 
 $route['404_override'] 		   = 'error404'; //override by controller
 $route['translate_uri_dashes'] = FALSE;

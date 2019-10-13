@@ -50,7 +50,7 @@ header.full-width #navigation ul.float-right {
 
 header.transparent {
     position: absolute;
-    background: transparent;
+    background: #0000009e;
     z-index: 999;
     top: 0;
     left: 0;
@@ -7232,8 +7232,8 @@ label.upload-btn input[type="file"] {
     }
 
         #style-switcher h2 a {
-            background: url("../images/switcher.png") no-repeat 9px center transparent;
-            background-color: #282828;
+            /*background: url("../images/switcher.png") no-repeat 9px center transparent;*/
+            background-color: #fff;
             display: block;
             height: 43px;
             position: absolute;
@@ -7241,6 +7241,7 @@ label.upload-btn input[type="file"] {
             text-indent: -9999px;
             top: 0;
             width: 43px;
+            display: none;
         }
 
 .colors {

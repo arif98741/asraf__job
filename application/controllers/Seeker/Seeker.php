@@ -15,6 +15,7 @@ class Seeker extends CI_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->helper('security');
+
     }
 
     /*
@@ -24,45 +25,12 @@ class Seeker extends CI_Controller
     */
     public function registration()
     {
-        
+        $this->load->view('front/lib/header');
         $this->load->view('front/seeker/log_reg/registration');
+        $this->load->view('front/lib/footer');
         
     }
 
-    /*
-    !--------------------------------------------------------
-    !       Login Handeller
-    !--------------------------------------------------------
-    */
-    public function login()
-    {
-        if ($this->session->has_userdata('company'))
-        {
-            redirect('admin/dashboard');
-        }
-
-        $username = $this->input->post("username");
-        $password = md5($this->input->post("password"));
-
-        $status   = $this->db->where(['username'=>$username,$password=$password])->get();
-        if ($status->result_id->num_rows > 0) {
-
-           $data     = $status->row();
-           $session  = array(
-                    'company'            => true,
-                    'company_id'         => $data->company_id,
-                    'seeker_company'    => $data->company_name,
-                    'seeker_full_name'  =>$data->full_name
-            );
-           $this->session->set_userdata($session);
-           $this->session->set_flashdata('success', 'Successfully Logged in');
-           redirect(base_url());
-       }else{
-            $this->session->set_flashdata('error', 'Username or password not matched');
-            redirect(base_url().'login');
-       }
-
-    }
 
     /*
     !--------------------------------------------------------
@@ -71,32 +39,50 @@ class Seeker extends CI_Controller
     */
     public function save_seeker()
     {
-        if ($this->db->where('email',$this->input->post('email'))->get('tbl_company')->num_rows() > 0) {
+       // echo '<pre>';
+       // print_r($_POST); exit;
+
+        if ($this->db->where('email',$this->input->post('email'))->get('seeker')->num_rows() > 0) {
             $this->session->set_flashdata('error', 'Email already exist');
-            redirect(base_url()."employee_registration");
-        }elseif($this->input->post('password') != $this->input->post('password_confirm')){
-            $this->session->set_flashdata('error', 'Password not matched');
-            redirect(base_url()."employee_registration");
+            redirect(base_url()."seeker/registration");
+            exit;
+        }elseif ($this->db->where('mobile',$this->input->post('mobile'))->get('seeker')->num_rows() > 0) {
+            $this->session->set_flashdata('error', 'Mobile already exist');
+            redirect(base_url()."seeker/registration");
+            exit;
         }else{
-            $this->db->insert('tbl_company',array(
-                'company_name' => $this->input->post('company_name'),
-                'email' => $this->input->post('email'),
-                'full_name' => $this->input->post('full_name'),
-                'location' => $this->input->post('location'),
-                'password' => md5($this->input->post('password'))
+            $this->db->insert('seeker',array(
+                'name'          => $this->input->post('name'),
+                'email'         => $this->input->post('email'),
+                'password'      => md5($this->input->post('password')),
+                'address'       => $this->input->post('address'),
             ));
             $insert_id = $this->db->insert_id();
 
             $this->session->set_userdata(array(
                 'seeker'            => true,
                 'seeker_id'         => $insert_id,
-                'seeker_company'    => $this->input->post('company_name'),
-                'seeker_full_name'  => $this->input->post('full_name')
+                'seeker_name'       => $this->input->post('name'),
+                'seeker_email'       => $this->input->post('email'),
             ));
             $this->session->set_flashdata('success', 'Registered successfully');
             redirect(base_url());
         }
       
+    }
+
+
+    /*
+    !--------------------------------------------------------
+    !     Seeker Logout
+    !--------------------------------------------------------
+    */
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('success', 'Logged out successfully');
+        redirect(base_url());
+
     }
 
 }

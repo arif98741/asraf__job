@@ -51,38 +51,38 @@
            <?php endif; ?>
 
            <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="company_name" placeholder="Company Name">
+            <input class="input100" type="text" name="company_name" placeholder="Company Name" required="">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
         </div>
 
         <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="email" placeholder="Company Email">
+            <input class="input100" type="text" name="email" placeholder="Company Email" required="">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
         </div>
 
         <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="full_name" placeholder="Author Name">
+            <input class="input100" type="text" name="full_name" placeholder="Author Name" required="">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
         </div>
 
 
         <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="location" placeholder="Location">
+            <input class="input100" type="text" name="location" placeholder="Location" required="">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
         </div>
 
         <div class="wrap-input100 rs1" data-validate="Password is required">
-            <input class="input100" type="password" name="password" placeholder="Password">
+            <input class="input100" type="password" name="password" placeholder="Password" required="">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
         </div>
 
         <div class="wrap-input100 rs1" data-validate="Password is required">
-            <input class="input100" type="password" name="password_confirm" placeholder="Confirm Password">
+            <input class="input100" type="password" name="password_confirm" placeholder="Confirm Password" required="">
             <span class="focus-input100-1" ></span>
             <span class="focus-input100-2"></span>
         </div>
