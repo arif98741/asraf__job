@@ -61,21 +61,6 @@
             </div>
           </div>
 
-          <div class="form-group row">
-            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Industry </label>
-            <div class="col-sm-9">
-              <select name="industry_id" id="" class="form-control">
-                <option value="">Select Option</option>
-
-                <?php foreach($industries as $industry){ ?>
-
-                  <option value="<?php echo $industry->industry_id ?>"><?php echo ucfirst($industry->industry_name); ?></option>
-
-                <?php } ?>
-
-              </select>
-            </div>
-          </div>
 
           <div class="form-group row">
             <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Company </label>

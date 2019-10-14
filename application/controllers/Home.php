@@ -37,4 +37,25 @@ class Home extends CI_Controller
         $this->load->view('front/home');
         $this->load->view('front/lib/footer');
     }
+
+
+
+    /*
+    !----------------------------------------
+    ! View Page
+    !----------------------------------------
+    */
+    public function view_page($page_id)
+    {
+        $this->db->where('id',$page_id);
+        $data['page'] = $this->db->get('pages')->row();
+        //echo '<pre>';
+        //print_r($data); exit;
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/page/single_page');
+        $this->load->view('front/lib/footer');
+    }
+
+
 }

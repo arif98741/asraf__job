@@ -31,9 +31,7 @@ class Job extends CI_Controller
         $data['title']      = "Add Job";
         $data['jobcats']  = $this->db->order_by('jobcat_name','asc')->get('tbl_job_category')->result_object();
 
-        $data['industries']  = $this->db->order_by('industry_name','asc')->get('tbl_industry')->result_object();
-
-        $data['companies']  = $this->db->order_by('company_name','asc')->get('tbl_company')->result_object();
+         $data['companies']  = $this->db->order_by('company_name','asc')->get('tbl_company')->result_object();
 
         $this->load->view('back/lib/header',$data);
         $this->load->view('back/lib/sidebar');
@@ -103,7 +101,7 @@ class Job extends CI_Controller
     {
         $data['title']      = "Job List";
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
-        $this->db->join('tbl_industry','tbl_industry.industry_id = tbl_job.industry_id');
+       
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         
         $data['jobs']  = $this->db->get('tbl_job')->result_object();

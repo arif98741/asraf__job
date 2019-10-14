@@ -42,13 +42,7 @@ class Admin extends CI_Controller
             redirect('admin');
         }
 
-        $data['totaljob']   = $this->db->get('tbl_job')->result_id->num_rows;
-        $data['totaljobcat'] = $this->db->get('tbl_job_category')->result_id->num_rows;
-        $data['totalindustry'] = $this->db->get('tbl_industry')->result_id->num_rows;
-        $data['totalemployee'] = $this->db->get('employee')->result_id->num_rows;
-
-
-        $this->load->view('back/lib/header',$data);
+        $this->load->view('back/lib/header');
         $this->load->view('back/lib/sidebar');
         $this->load->view('back/dashboard');
         $this->load->view('back/lib/footer');

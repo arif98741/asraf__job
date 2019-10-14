@@ -18,6 +18,17 @@
 
 
 <div class="container">
+	<?php if($this->session->error):?>
+
+
+		<p style="padding: 7px; color: white; background: #6F6F6F;" class="message"><?php echo $this->session->error; ?></p>
+	<?php endif;?>
+
+
+	<?php if($this->session->success):?>
+
+		<p style="padding: 7px; color: white; background: #6F6F6F;" class="message"><?php echo $this->session->success; ?></p>
+	<?php endif;?>
 	
 	<!-- Table -->
 	<div class="sixteen columns">
@@ -44,7 +55,8 @@
 					<td><?php echo date('F d, Y',strtotime($job->deadline)); ?></td>
 					<td class="centered"><a href="<?php echo base_url(); ?>company/application/manage_applications/<?php  echo $job->job_id;?>" class="button">Show (<?php echo $job->total_apply; ?>)</a></td>
 					<td class="action">
-						<a href="#" class="delete"><i class="fa fa-remove"></i> Delete</a>
+						<a href="<?php echo base_url(); ?>company/job/edit_job/<?php  echo $job->job_id;?>"><i class="fa fa-pencil"></i> Edit</a>
+						<a href="<?php echo base_url(); ?>company/job/delete_job/<?php  echo $job->job_id;?>" onclick="return(confirm('are you sure to delete job? ')" class=""><i class="fa fa-remove" ></i> Delete</a>
 					</td>
 				</tr>
 			<?php } ?>

@@ -116,62 +116,9 @@ if ($this->session->success) { ?>
                                                 <a href="job-page.php" class="button">Apply For This Job</a>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="job-spotlight">
-                                                <a href="#"><h4>Graphics Designer                                            
-                                                    <span style="background-color:#2980b9;" class="full-time">Full-Time</span>
-                                                </h4></a>
-                                                <span><i class="fa fa-briefcase"></i>Soft-Tech</span>
-                                                <span><i class="fa fa-map-marker"></i> Dhanmondi, Dhaka</span>
-                                                <span><i class="fa fa-money"></i>40k</span>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, yo</p>
-                                                <a href="job-page.php" class="button">Apply For This Job</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="job-spotlight">
-                                                <a href="#"><h4>Receptionist                                            
-                                                    <span style="background-color:#d35400;" class="full-time">Part-Time</span>
-                                                </h4></a>
-                                                <span><i class="fa fa-briefcase"></i>UY LAB</span>
-                                                <span><i class="fa fa-map-marker"></i> Wireless Morh, Mohakhale, Dhaka</span>
-                                                <span><i class="fa fa-money"></i>20k</span>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.</p>
-                                                <a href="job-page.php" class="button">Apply For This Job</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="job-spotlight">
-                                                <a href="#"><h4>SEO                                            
-                                                    <span style="background-color:#f39c12;" class="full-time">Internship</span>
-                                                </h4></a>
-                                                <span><i class="fa fa-briefcase"></i>Tech Co.</span>
-                                                <span><i class="fa fa-map-marker"></i> Mohakhale, Dhaka</span>
-                                                <span><i class="fa fa-money"></i>50k</span>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, co</p>
-                                                <a href="job-page.php" class="button">Apply For This Job</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="job-spotlight">
-                                                <a href="#"><h4>Full Stack Web Developer                                            
-                                                    <span style="background-color:#27ae60;" class="full-time">Freelance</span>
-                                                </h4></a>
-                                                <span><i class="fa fa-briefcase"></i>Winkit</span>
-                                                <span><i class="fa fa-map-marker"></i> Khalanbari, Dhaka</span>
-                                                <span><i class="fa fa-money"></i>Negotable</span>
-                                                <p>There is colors I like most.
-                                                    1) Red
-                                                    2)Black
-                                                    3)Green
-                                                    4)Yellow
-                                                    5) Blue
 
-                                                    There is colors I like most.There is colors I like most.There is colors I like most.There is colors I like most.There is colors I like most.
-                                                There is colors I like most.There is colors I like most.There is colors I like most.There is colors I like most.There is colors I like most.</p>
-                                                <a href="job-page.php" class="button">Apply For This Job</a>
-                                            </div>
-                                        </li>
+
+                                     
 
                                     </ul>
                                     <div class="clearfix"></div>
@@ -183,7 +130,6 @@ if ($this->session->success) { ?>
 
                     </div>
                 </div>
-
 
                 <!-- Testimonials -->
                 <div id="testimonials">

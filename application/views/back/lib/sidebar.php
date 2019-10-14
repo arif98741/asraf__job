@@ -4,7 +4,7 @@
             <div class="nav-link">
               <div class="user-wrapper">
                 <div class="profile-image">
-                  <img src="https://user-images.githubusercontent.com/17213478/55688195-b7cb5280-5997-11e9-890f-0a9fff5d4c09.jpg">
+                  <img src="<?php echo base_url(); ?>uploads/admin/admin.png">
                 </div>
                 <div class="text-wrapper">
                   <p class="profile-name">Admin</p>
@@ -43,9 +43,7 @@
             </a>
             <div class="collapse" id="ui-job">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-job">Add  Job</a>
-                </li>
+                
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo base_url(); ?>admin/job-list">Job List</a>
                 </li>
@@ -73,68 +71,8 @@
             </div>
           </li>
 
-            <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-scholarship" aria-expanded="false" aria-controls="ui-basic1">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Scholarship</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-scholarship">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/scholarship/index">Scholarships</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/scholarship/add_scholarship">Add Scholarship</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/scholarship/scholarship_applications">Scholarship Applications</a>
-                </li>
-                
-              </ul>
-            </div>
-          </li>
-
-
-
-           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-designation" aria-expanded="false" aria-controls="ui-designation">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Job Designation</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-designation">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-designation">Add  Designation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/designation-list"> Designation List</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
           
 
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic1">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Industry</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic2">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-industry">Add Industry</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/industry-list">Industry List</a>
-                </li>
-              </ul>
-            </div>
-          </li>
 
            <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-pages" aria-expanded="false" aria-controls="ui-pages">

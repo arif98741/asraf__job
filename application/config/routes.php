@@ -7,8 +7,8 @@ $route['default_controller'] 	 = 'home';
 ! 	Admin
 !---------------------------------------------------
 */
-/*
 $route['admin'] 			= 'admin/admin/index';
+
 $route['admin/dashboard'] 	= 'admin/admin/dashboard';
 $route['admin/add-job'] 	= 'job/add_job';
 $route['admin/job-list'] 	= 'job/job_list';
@@ -49,41 +49,19 @@ $route['admin/delete-page/(:num)']		= 'page/delete_page/$1';
 
 
 
-$route['jobs/(:num)'] 					= 'publicview/job_single/$1';
-$route['jobs/job_single/(:num)'] 		= 'publicview/job_single/$1';
-$route['profile']	       			    = 'registration/profile';
-$route['registration']	   				= 'registration/registration';
-$route['login']	  		   				= 'registration/login';
-$route['logout']	  	    			= 'registration/logout';
-$route['page/(:num)/(:any)']			= 'publicview/view_page/$1/$2';
-$route['jobs/search']		 			= 'search/index';
-
-$route['jobs']				 			= 'search/all_jobs';
-$route['jobs/all']				 		= 'search/all_jobs';
-$route['jobs/category/(:num)/(:any)']	= 'search/jobs_category/$1/$2';
-$route['jobs/job-type/(:any)']			= 'search/jobs_type/$1';
-$route['jobs/search_result/(:any)']	    = 'search/search_result';
-
-
-
-	!-------------------------------------------
-	! Employee
-	!-------------------------------------------
-
-$route['employee/profle']	   	= 'employee/profile';	
-$route['scholarship']	   		= "publicview/scholarship";	
-$route['scholarship/apply/(:num)']	 = "publicview/scholarship_apply/$1";	
-
-
-
-$route['recruiter/all']	 = "recruiter/all_recruiters";	*/
+/*
+!-------------------------------------------
+! HOmepage
+!-------------------------------------------
+*/
+$route['recruiter/all']	 = "recruiter/all_recruiters";	
 
 $route['login']	  					= 'login/index';	
 $route['seeker/registration']	  = 'seeker/seeker/registration';	
 $route['provider_registration']	  = 'company/company/registration';	
 $route['company/logout']	  	= 'company/company/logout';	
 $route['seeker/logout']	  		= 'seeker/seeker/logout';	
-
+$route['page/(:num)/(:any)']	= 'home/view_page/$1/$2';	
 
 
 $route['404_override'] 		   = 'error404'; //override by controller

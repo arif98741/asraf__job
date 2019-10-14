@@ -78,59 +78,61 @@
 					</div>
 
 
-					
-					<a href="<?php echo base_url(); ?>seeker/seeker/edit_profile" class=" dark"><i class="fa fa-cog"></i> Edit Profile</a>
+					<?php if($this->session->seeker): ?>
+						<a href="<?php echo base_url(); ?>seeker/seeker/edit_profile" class=" dark"><i class="fa fa-cog"></i> Edit Profile</a>
 
-					<a href="#" class="button dark"><i class="fa fa-star"></i> Bookmark This Resume</a>
+						<?php endif; ?>
 
-					
+						<a href="#" class="button dark"><i class="fa fa-star"></i> Bookmark This Resume</a>
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- Recent Jobs -->
+			<div class="eight columns">
+				<div class="padding-right">
+
+					<h3 class="margin-bottom-15">About Me</h3>
+
+					<p class="margin-reset">
+						<?php echo $seeker->about_me; ?>
+					</p>
+
 
 
 				</div>
 			</div>
 
-		</div>
-	</div>
 
-	<div class="container">
-		<!-- Recent Jobs -->
-		<div class="eight columns">
-			<div class="padding-right">
+			<!-- Widgets -->
+			<div class="eight columns">
 
-				<h3 class="margin-bottom-15">About Me</h3>
+				<h3 class="margin-bottom-20">Education</h3>
 
-				<p class="margin-reset">
-					<?php echo $seeker->about_me; ?>
-				</p>
+				<!-- Resume Table -->
+				<dl class="resume-table">
+					<?php foreach ($educations as $education) { ?>
+						<dt>
+							<small class="date"><?php echo $education->grade_year; ?></small>
+							<strong><?php echo $education->grade; ?></strong>
+						</dt>
+						<dd>
+							<?php echo $education->grade_description; ?>
+						</dd>
+
+					<?php } ?>
 
 
+
+				</dl>
 
 			</div>
-		</div>
-
-
-		<!-- Widgets -->
-		<div class="eight columns">
-
-			<h3 class="margin-bottom-20">Education</h3>
-
-			<!-- Resume Table -->
-			<dl class="resume-table">
-				<?php foreach ($educations as $education) { ?>
-					<dt>
-						<small class="date"><?php echo $education->grade_year; ?></small>
-						<strong><?php echo $education->grade; ?></strong>
-					</dt>
-					<dd>
-						<?php echo $education->grade_description; ?>
-					</dd>
-
-				<?php } ?>
-
-
-
-			</dl>
 
 		</div>
-
-	</div>

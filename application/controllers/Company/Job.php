@@ -81,6 +81,55 @@ class Job extends CI_Controller
     }
 
 
+    /*
+    !--------------------------------------------------------
+    !     Edit Job
+    !--------------------------------------------------------
+    */
+    public function edit_job($job_id)
+    {
+        if (!$this->session->company) {
+            redirect(base_url(),'refresh');
+        }
+
+        $data['jobcats'] = $this->db->order_by('jobcat_name')->get('tbl_job_category')->result_object();
+
+        $data['job_tag'] = $this->db->order_by('jobcat_name')->get('tbl_job_category')->result_object();
+
+        
+
+
+
+        $this->db->where('job_id',$job_id);
+        $data['job'] = $this->db->get('tbl_job')->row();
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/company/job/edit_job');
+        $this->load->view('front/lib/footer');
+    }
+
+
+
+     /*
+    !--------------------------------------------------------
+    !     Delete Job
+    !--------------------------------------------------------
+    */
+    public function delete_job($job_id)
+    {
+       
+        $this->db->where('job_id',$job_id);
+        $this->db->where('company_id',$this->session->company_id);
+        $this->db->delete('tbl_job');
+        $this->session->set_flashdata('success', 'Job Deleted Successfully');
+        redirect(base_url().'company/job/manage_jobs/');
+
+
+    }
+
+
+
+
 
     /*
     !--------------------------------------------------------
