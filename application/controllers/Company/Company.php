@@ -70,6 +70,22 @@ class Company extends CI_Controller
 
     /*
     !--------------------------------------------------------
+    !      Job Profile
+    !--------------------------------------------------------
+    */
+    public function company_profile()
+    {
+        
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/company/job/add_job');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+
+
+    /*
+    !--------------------------------------------------------
     !      Company Logout
     !--------------------------------------------------------
     */

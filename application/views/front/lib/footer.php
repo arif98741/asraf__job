@@ -179,5 +179,12 @@
             </div>
             <div id="reset"><a href="#" class="button color">Reset</a></div>
         </div>
+        <script>
+            $(document).ready(function() {
+                setTimeout(function(){
+                    $('.message').slideUp(800);
+                 },5000);
+            });
+        </script>
     </body>
     </html> 

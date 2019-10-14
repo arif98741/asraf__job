@@ -42,7 +42,7 @@
 					<td class="centered">-</td>
 					<td><?php echo date('F d, Y',strtotime($job->posted_date)); ?></td>
 					<td><?php echo date('F d, Y',strtotime($job->deadline)); ?></td>
-					<td class="centered"><a href="manage-applications.html" class="button">Show (9)</a></td>
+					<td class="centered"><a href="<?php echo base_url(); ?>company/application/manage_applications/<?php  echo $job->job_id;?>" class="button">Show (<?php echo $job->total_apply; ?>)</a></td>
 					<td class="action">
 						<a href="#" class="delete"><i class="fa fa-remove"></i> Delete</a>
 					</td>

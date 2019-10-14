@@ -69,8 +69,11 @@ class Job extends CI_Controller
     */
     public function manage_jobs()
     {
+        $this->db->select('tbl_job.*,count(applications.application_id) as total_apply');
+        $this->db->join('applications','applications.job_id = tbl_job.job_id','left');
+        $this->db->group_by('tbl_job.job_id');
         $this->db->where('company_id',$this->session->company_id);
-        $data['jobs'] = $this->db->order_by('job_id','desc')->get('tbl_job')->result_object();
+        $data['jobs'] = $this->db->order_by('tbl_job.job_id','desc')->get('tbl_job')->result_object();
 
         $this->load->view('front/lib/header',$data);
         $this->load->view('front/company/job/manage_job');

@@ -8,7 +8,7 @@
             <?php if($this->session->error): ?>
                 <p class="alert alert-warning" id="message" style="color:white; background: orange; padding: 10px;"><?php echo $this->session->error; ?></p><br>
             <?php endif; ?>
-            <?php echo form_open('seeker/seeker/save_seeker',array('class'=> 'login')) ?>
+            <?php echo form_open_multipart('seeker/seeker/save_seeker',array('class'=> 'login')) ?>
 
 
             <p class="form-row form-row-wide">
@@ -51,6 +51,14 @@
                     Address:
                     <i class="ln ln-icon-Globe"></i>
                     <textarea class="input-text" name="address" ></textarea>
+                </label>
+            </p>
+
+             <p class="form-row form-row-wide">
+                <label for="password">
+                    Image:
+                    <i class="ln ln-icon-User"></i>
+                    <input type="file" name="image">
                 </label>
             </p>
 

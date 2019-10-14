@@ -42,7 +42,7 @@ class Login extends CI_Controller
     public function login()
     {
         
-        $username = $this->input->post("username");
+        $email = $this->input->post("email");
         $password = $this->input->post("password");
         $position = $this->input->post("position");
 
@@ -63,7 +63,7 @@ class Login extends CI_Controller
     */
     public function company_login($email,$password)
     {
-        $status   = $this->db->where(['username'=>$username,'password'=>md5($password)])->get('tbl_company');
+        $status   = $this->db->where(['email'=>$email,'password'=>md5($password)])->get('tbl_company');
         if ($status->result_id->num_rows > 0) {
 
            $data     = $status->row();
@@ -90,17 +90,18 @@ class Login extends CI_Controller
     */
     public function seeker_login($email,$password)
     {
-        $status   = $this->db->where(['username'=>$username,'password'=>md5($password)])->get('seeker');
+        $status   = $this->db->where(['email'=>$email,'password'=>md5($password)])->get('seeker');
         if ($status->result_id->num_rows > 0) {
 
            $data     = $status->row();
            $session  = array(
                     'seeker'        => true,
-                    'seeker_id'     => $data->company_id,
-                    'seeker_name'   => $data->company_name,
+                    'seeker_id'     => $data->seeker_id,
+                    'seeker_name'   => $data->name,
                     'seeker_email'  =>$data->email,
             );
            $this->session->set_userdata($session);
+           
            $this->session->set_flashdata('success', 'Successfully Logged in');
            redirect(base_url());
        }else{

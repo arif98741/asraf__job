@@ -1,7 +1,8 @@
+<div class="div" style="margin-top: 60px;"></div>
 <div id="titlebar">
 	<div class="container">
 		<div class="ten columns">
-			<span>We found 1,412 jobs matching:</span>
+			<span>We found <?php echo $total_job; ?> jobs matching:</span>
 			<h2>Web, Software & IT</h2>
 		</div>
 
@@ -19,7 +20,7 @@
 		<!-- Recent Jobs -->
 		<div class="eleven columns">
 			<div class="padding-right">
-				
+
 				<form action="#" method="get" class="list-search">
 					<button><i class="fa fa-search"></i></button>
 					<input type="text" placeholder="job title, keywords or company name" value=""/>
@@ -27,13 +28,29 @@
 				</form>
 
 				<ul class="job-list full">
+					<?php foreach ($jobs as $job) { ?>
+						
 
-					<li><a href="job-page.html">
-						<img src="images/job-list-logo-01.png" alt="">
-						<div class="job-list-content">
-							<h4>Marketing Coordinator - SEO / SEM Experience <span class="full-time">Full-Time</span></h4>
+						<li><a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>">
+							<img src="<?php echo base_url(); ?>asset/front/company_images/27096.jpg" alt="">
+							<div class="job-list-content">
+								<h4><?php echo $job->job_title; ?> 
+
+								<?php if($job->job_type  == 'Full-Time'){?>
+									<span class="part-time">Full-Time</span>
+
+								<?php }elseif($job->job_type  == 'Part-Time'){?>
+									<span class="full-time">Full-Time</span>
+
+								<?php }elseif($job->job_type  == 'Internship'){?>
+									<span class="internship">Internship</span>
+
+									
+								<?php }?>
+
+							</h4>
 							<div class="job-icons">
-								<span><i class="fa fa-briefcase"></i> King</span>
+								<span><i class="fa fa-briefcase"></i> <?php echo $job->company_name;?></span>
 								<span><i class="fa fa-map-marker"></i> Sydney</span>
 								<span><i class="fa fa-money"></i> $100 / hour</span>
 							</div>
@@ -43,88 +60,39 @@
 					<div class="clearfix"></div>
 				</li>
 
-				<li><a href="job-page.html">
-					<img src="images/job-list-logo-02.png" alt="">
-					<div class="job-list-content">
-						<h4>Core PHP Developer for Site Maintenance <span class="part-time">Part-Time</span></h4>
-						<div class="job-icons">
-							<span><i class="fa fa-briefcase"></i> Cubico</span>
-							<span><i class="fa fa-map-marker"></i> London</span>
-							<span><i class="fa fa-money"></i> $50 / hour</span>
-						</div>
-						<p>Vivamus eleifend metus elit. Aenean facilisis placerat faucibus. Praesent commodo at mi nec imperdiet. Etiam at libero nec nunc iaculis ullamcorper.</p>
-					</div>
-				</a>
-				<div class="clearfix"></div>
-			</li>
+			<?php } ?>
 
-			<li><a href="job-page-alt.html">
-				<img src="images/job-list-logo-03.png" alt="">
-				<div class="job-list-content">
-					<h4>Restaurant Team Member - Crew <span class="full-time">Full-Time</span></h4>
-					<div class="job-icons">
-						<span><i class="fa fa-briefcase"></i> King</span>
-						<span><i class="fa fa-map-marker"></i> Sydney</span>
-						<span><i class="fa fa-money"></i> $15 / hour</span>
-					</div>
-					<p>Duis eu sem erat. Aliquam vestibulum justo at quam facilisis, sit amet condimentum dui laoreet. Nunc feugiat ante quis pulvinar ornare. In tempus lorem ipsum.</p>
-				</div>
-			</a>
-			<div class="clearfix"></div>
-		</li>
 
-		<li><a href="job-page.html">
-			<img src="images/job-list-logo-04.png" alt="">
-			<div class="job-list-content">
-				<h4>Power Systems User Experience Designer  <span class="internship">Internship</span></h4>
-				<div class="job-icons">
-					<span><i class="fa fa-briefcase"></i> Hexagon</span>
-					<span><i class="fa fa-map-marker"></i> London</span>
-					<span><i class="fa fa-money"></i> $75 / hour</span>
-				</div>
-				<p>Praesent eu imperdiet quam. Fusce posuere venenatis lorem vel lacinia. Integer orci magna, accumsan nec velit quis, porttitor pulvinar nulla. Nullam viverra risus massa.</p>
-			</div>
-		</a>
+
+		</ul>
 		<div class="clearfix"></div>
-	</li>
 
-	<li><a href="job-page-alt.html">
-		<img src="images/job-list-logo-05.png" alt="">
-		<div class="job-list-content">
-			<h4>iPhone / Android Music App Development <span class="temporary">Temporary</span></h4>
-			<div class="job-icons">
-				<span><i class="fa fa-briefcase"></i> Mates</span>
-				<span><i class="fa fa-map-marker"></i> New York</span>
-				<span><i class="fa fa-money"></i> $115 / hour</span>
-			</div>
-			<p>Sodales mollis metus eget egestas. Duis sit amet sem pretium, facilisis libero ut, lobortis arcu. Cras ipsum libero, suscipit ut nisl vitae, commodo pretium mauris.</p>
+		<div class="pagination-container">
+			<nav class="pagination">
+				<ul>
+					<?php for($i=1; $i<=$total_no_of_pages; $i++){ ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $i; ?>" <?php if($i == $page_id): ?> class="current-page" <?php endif; ?>><?php echo $i; ?></a></li>
+					<?php }?>
+				</ul>
+			</nav>
+
+			<nav class="pagination-next-prev">
+				<ul>
+					<?php if($page_id != 1): ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $previous_page; ?>" class="prev">Previous</a></li>
+					<?php endif; ?>
+
+					<?php if($page_id !== $total_no_of_pages): ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $next_page; ?>" class="next">Next</a></li>
+						
+					<?php endif; ?>
+
+					
+				</ul>
+			</nav>
 		</div>
-	</a>
-	<div class="clearfix"></div>
-</li>
-</ul>
-<div class="clearfix"></div>
 
-<div class="pagination-container">
-	<nav class="pagination">
-		<ul>
-			<li><a href="#" class="current-page">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li class="blank">...</li>
-			<li><a href="#">22</a></li>
-		</ul>
-	</nav>
-
-	<nav class="pagination-next-prev">
-		<ul>
-			<li><a href="#" class="prev">Previous</a></li>
-			<li><a href="#" class="next">Next</a></li>
-		</ul>
-	</nav>
-</div>
-
-</div>
+	</div>
 </div>
 
 
@@ -153,9 +121,9 @@
 			<input type="text" placeholder="State / Province" value=""/>
 			<input type="text" placeholder="City" value=""/>
 
-			<input type="text" class="miles" placeholder="Miles" value=""/>
+		<!-- 	<input type="text" class="miles" placeholder="Miles" value=""/>
 			<label for="zip-code" class="from">from</label>
-			<input type="text" id="zip-code" class="zip-code" placeholder="Zip-Code" value=""/><br>
+			<input type="text" id="zip-code" class="zip-code" placeholder="Zip-Code" value=""/><br> -->
 
 			<button class="button">Filter</button>
 		</form>

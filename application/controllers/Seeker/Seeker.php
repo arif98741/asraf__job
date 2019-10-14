@@ -39,8 +39,6 @@ class Seeker extends CI_Controller
     */
     public function save_seeker()
     {
-       // echo '<pre>';
-       // print_r($_POST); exit;
 
         if ($this->db->where('email',$this->input->post('email'))->get('seeker')->num_rows() > 0) {
             $this->session->set_flashdata('error', 'Email already exist');
@@ -58,6 +56,7 @@ class Seeker extends CI_Controller
                 'address'       => $this->input->post('address'),
             ));
             $insert_id = $this->db->insert_id();
+            $this->upload_image($insert_id);
 
             $this->session->set_userdata(array(
                 'seeker'            => true,
@@ -68,7 +67,70 @@ class Seeker extends CI_Controller
             $this->session->set_flashdata('success', 'Registered successfully');
             redirect(base_url());
         }
-      
+
+    }
+
+    /*
+    !--------------------------------------------------------
+    !       Profile Page
+    !--------------------------------------------------------
+    */
+    public function profile($id)
+    {
+        $data['seeker'] = $this->db->where('seeker_id',$id)->get('seeker')->row();
+        $data['tags'] = $this->db->where('seeker_id',$id)->get('seeker_tag')->result_object();
+        $data['educations'] = $this->db->where('seeker_id',$id)->get('seeker_education')->result_object();
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/seeker/profile');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+
+    /*
+    !--------------------------------------------------------
+    !    Upload Image
+    !--------------------------------------------------------
+    */
+    private function upload_image($insert_id)
+    {
+        if (!empty($_FILES['image']['name'])) {
+
+            $config['upload_path'] = './uploads/seeker/image/';
+            $config['allowed_types'] = 'jpg|JPG|JPEG|PNG|png';
+            $config['max_size']     = 10000;
+            $config['max_width']    = 10000;
+            $config['max_height']   = 10000;
+            $config['file_name']    = "img".rand(1111111,9999999);
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+                $upload_data    = array('upload_data' => $this->upload->data());
+                $data['image']  = $upload_data['upload_data']['file_name'];
+                $this->db->set(['image'=>$data['image']]);
+                $this->db->where('seeker_id',$insert_id)->update('seeker');
+            }
+        }
+    }
+
+
+
+     /*
+    !--------------------------------------------------------
+    !      Edit Profile
+    !--------------------------------------------------------
+    */
+    public function edit_profile()
+    {
+        $data['seeker'] = $this->db->where('seeker_id',$this->session->seeker_id)->get('seeker')->row();
+        $data['tags'] = $this->db->where('seeker_id',$this->session->seeker_id)->get('seeker_tag')->result_object();
+        $data['educations'] = $this->db->where('seeker_id',$this->session->seeker_id)->get('seeker_education')->result_object();
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/seeker/edit_profile');
+        $this->load->view('front/lib/footer');
+        
     }
 
 
@@ -84,5 +146,10 @@ class Seeker extends CI_Controller
         redirect(base_url());
 
     }
+
+
+
+
+
 
 }
