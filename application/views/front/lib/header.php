@@ -76,7 +76,7 @@
                                     <?php endif; ?>
 
                                     <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Browse Jobs</a></li>
-                                    <li><a href="browse-categories.php">Browse Categories</a></li>
+                                    <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">Browse Categories</a></li>
                                     <li><a href="manage-resumes.php">Manage Resumes</a></li>
 
 

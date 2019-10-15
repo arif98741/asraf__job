@@ -110,3 +110,7 @@ $config['proxy_ips'] = '';
 $config['sess_save_path'] = BASEPATH . 'cache/';
 //default timezone
 date_default_timezone_set('Asia/Dhaka');
+
+$path =  pathinfo(__DIR__);
+require $path['dirname'].'../../vendor/autoload.php';
+

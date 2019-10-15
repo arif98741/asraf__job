@@ -32,10 +32,10 @@ class Blog extends CI_Controller
         $this->db->order_by('tbl_blog.blog_id','desc');
         $data['blogs'] = $this->db->get('tbl_blog')->result_object();
 
-        $this->load->view('admin/lib/header',$data);
-        $this->load->view('admin/lib/sidebar');
-        $this->load->view('admin/blog/blog_list');
-        $this->load->view('admin/lib/footer');
+        $this->load->view('back/lib/header',$data);
+        $this->load->view('back/lib/sidebar');
+        $this->load->view('back/blog/blog_list');
+        $this->load->view('back/lib/footer');
     }
 
 
@@ -48,10 +48,10 @@ class Blog extends CI_Controller
     {
         $this->db->order_by('tbl_blog_category.category_title','asc');
         $data['blog_categories'] = $this->db->get('tbl_blog_category')->result_object();
-        $this->load->view('admin/lib/header',$data);
-        $this->load->view('admin/lib/sidebar');
-        $this->load->view('admin/blog/blog_cat_list');
-        $this->load->view('admin/lib/footer');
+        $this->load->view('back/lib/header',$data);
+        $this->load->view('back/lib/sidebar');
+        $this->load->view('back/blog/blog_cat_list');
+        $this->load->view('back/lib/footer');
     }
 
 
@@ -66,12 +66,11 @@ class Blog extends CI_Controller
         $data['categories'] = $this->db->get('tbl_blog_category')->result_object(); 
 
         $this->db->order_by('tag_name','asc');
-        $data['tags'] = $this->db->get('tbl_tag')->result_object(); 
 
-        $this->load->view('admin/lib/header',$data);
-        $this->load->view('admin/lib/sidebar');
-        $this->load->view('admin/blog/add_blog');
-        $this->load->view('admin/lib/footer');
+        $this->load->view('back/lib/header',$data);
+        $this->load->view('back/lib/sidebar');
+        $this->load->view('back/blog/add_blog');
+        $this->load->view('back/lib/footer');
     }
 
 
@@ -99,7 +98,7 @@ class Blog extends CI_Controller
 
         if (!empty($_FILES['blog_attachment']['name'])) {
                 
-                $config['upload_path']   = './uploads/blog/fullwidth/';
+                $config['upload_path']   = './uploads/blog/';
                 $config['allowed_types'] = 'gif|jpg|png|jpeg|GIF|PNG|JPG|JPEG';
                 $config['max_size']      = 10000;
                 $config['max_width']     = 10000;
@@ -116,7 +115,7 @@ class Blog extends CI_Controller
                     $obj = new Image;
                     $img = $obj->make($_FILES['blog_attachment']['tmp_name']);
                     $img->fit(235, 180);
-                    $img->save('uploads/blog/235X180/'.$file_name);
+                    $img->save('uploads/blog/'.$file_name);
 
                     $this->db->set(['blog_attachment'=>$file,'thumb'=>$file_name]);
                     $this->db->where('blog_id',$insert_id);
@@ -140,15 +139,12 @@ class Blog extends CI_Controller
         $this->db->order_by('category_title','asc');
         $data['categories'] = $this->db->get('tbl_blog_category')->result_object(); 
 
-        $this->db->order_by('tag_name','asc');
-        $data['tags'] = $this->db->get('tbl_tag')->result_object(); 
-
         $this->db->where('blog_id',$blog_id);
         $data['blog'] = $this->db->get('tbl_blog')->result_object(); 
-        $this->load->view('admin/lib/header',$data);
-        $this->load->view('admin/lib/sidebar');
-        $this->load->view('admin/blog/edit_blog');
-        $this->load->view('admin/lib/footer');
+        $this->load->view('back/lib/header',$data);
+        $this->load->view('back/lib/sidebar');
+        $this->load->view('back/blog/edit_blog');
+        $this->load->view('back/lib/footer');
     }
 
     /*
@@ -230,7 +226,7 @@ class Blog extends CI_Controller
         $insert_id = $this->db->insert_id();
 
         $this->session->set_flashdata('success', 'Blog Category <strong>'.$this->input->post("category_title").'</strong> Added Successfully');
-        redirect('admin/blog/blog_cat_list');
+        redirect('back/blog/blog_cat_list');
     }
 
 
@@ -249,7 +245,7 @@ class Blog extends CI_Controller
         $this->db->where('tbcid',$tbcid)->update('tbl_blog_category');
         
         $this->session->set_flashdata('success', 'Blog Category Successfully Updated to <strong>'.$this->input->post("category_title").'</strong>');
-        redirect('admin/blog/blog_cat_list');
+        redirect('back/blog/blog_cat_list');
     }
 
     /*
@@ -301,7 +297,7 @@ class Blog extends CI_Controller
         }
 
         $this->session->set_flashdata('success', 'Post Added Successfully');
-        redirect('admin/post_list');
+        redirect('back/post_list');
         }
 
     }
@@ -342,7 +338,7 @@ class Blog extends CI_Controller
         )); 
         $this->db->delete('tbl_blog_category');
         $this->session->set_flashdata('success', 'Page Category(<strong>'.$tpcid.'</strong>) Deleted Successfully');
-        redirect('admin/blog/blog_cat_list');
+        redirect('back/blog/blog_cat_list');
     }
 
 }

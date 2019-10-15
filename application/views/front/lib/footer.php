@@ -15,11 +15,11 @@
                     <div class="three columns">
                         <h4>Company</h4>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="<?php echo base_url(); ?>page/96/about-us">About Us</a></li>
                             <li><a href="#">Careers</a></li>
-                            <li><a href="#">Our Blog</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="<?php echo base_url(); ?>blog">Our Blog</a></li>
+                            <li><a href="<?php echo base_url(); ?>page/97/terms-and-conditions">Terms of Service</a></li>
+                            <li><a href="<?php echo base_url(); ?>page/98/privacy-policy">Privacy Policy</a></li>
                             <li><a href="#">Hiring Hub</a></li>
                         </ul>
                     </div>

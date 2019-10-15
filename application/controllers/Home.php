@@ -31,6 +31,8 @@ class Home extends CI_Controller
         $this->db->limit(4);
         $data['front_jobs'] = $this->db->get('tbl_job')->result_object();
 
+        $data['jobcats'] = $this->db->order_by('jobcat_id','desc')->limit(8)->get('tbl_job_category')->result_object();
+
 
         $this->load->view('front/lib/header',$data);
         $this->load->view('front/lib/banner');

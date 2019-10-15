@@ -1,122 +1,138 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item nav-profile">
-            <div class="nav-link">
-              <div class="user-wrapper">
-                <div class="profile-image">
-                  <img src="<?php echo base_url(); ?>uploads/admin/admin.png">
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">Admin</p>
-                  <div>
-                    <small class="designation text-muted">Administrator</small>
-                    <span class="status-indicator online"></span>
-                  </div>
-                </div>
-              </div>
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <div class="nav-link">
+        <div class="user-wrapper">
+          <div class="profile-image">
+            <img src="<?php echo base_url(); ?>uploads/admin/admin.png">
+          </div>
+          <div class="text-wrapper">
+            <p class="profile-name">Admin</p>
+            <div>
+              <small class="designation text-muted">Administrator</small>
+              <span class="status-indicator online"></span>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>" target="1">
-              <i class="menu-icon mdi mdi-web"></i>
-              <span class="menu-title">View Site</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-            <a class="nav-link" href="<?php echo base_url(); ?>admin/admin/logout" onclick="return(confirm('will you logout ?'))">
-              <i class="menu-icon mdi mdi-mouse"></i>
-              <span class="menu-title">Logout</span>
-            </a>
-            
-          </li>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<?php echo base_url(); ?>" target="1">
+        <i class="menu-icon mdi mdi-web"></i>
+        <span class="menu-title">View Site</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+      <a class="nav-link" href="<?php echo base_url(); ?>admin/admin/logout" onclick="return(confirm('will you logout ?'))">
+        <i class="menu-icon mdi mdi-mouse"></i>
+        <span class="menu-title">Logout</span>
+      </a>
 
-        
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-job" aria-expanded="false" aria-controls="ui-job">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Jobs</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-job">
-              <ul class="nav flex-column sub-menu">
-                
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/job-list">Job List</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+    </li>
 
 
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-job" aria-expanded="false" aria-controls="ui-job">
+        <i class="menu-icon mdi mdi-format-list-bulleted"></i>
+        <span class="menu-title">Jobs</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-job">
+        <ul class="nav flex-column sub-menu">
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Job Category</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic1">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-job-category">Add  Job Category</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/job-category-list">Job Category List</a>
-                </li>
-              </ul>
-            </div>
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/job-list">Job List</a>
           </li>
+        </ul>
+      </div>
+    </li>
 
-          
 
 
-           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-pages" aria-expanded="false" aria-controls="ui-pages">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Page</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-pages">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-page">Add Page</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/page-list">Page List</a>
-                </li>
-              </ul>
-            </div>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+        <i class="menu-icon mdi mdi-format-list-bulleted"></i>
+        <span class="menu-title">Job Category</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic1">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/add-job-category">Add  Job Category</a>
           </li>
-
-          
-
-           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-company" aria-expanded="false" aria-controls="ui-company">
-              <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-              <span class="menu-title">Company</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-company">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/add-company">Add  Company</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url(); ?>admin/company-list">Company List</a>
-                </li>
-              </ul>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/job-category-list">Job Category List</a>
           </li>
+        </ul>
+      </div>
+    </li>
+
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-pages" aria-expanded="false" aria-controls="ui-pages">
+        <i class="menu-icon mdi mdi-format-list-bulleted"></i>
+        <span class="menu-title">Page</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-pages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/add-page">Add Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/page-list">Page List</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-blogs" aria-expanded="false" aria-controls="ui-blogs">
+        <i class="menu-icon mdi mdi-format-list-bulleted"></i>
+        <span class="menu-title">Blog</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-blogs">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/blog/add_blog">Add Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/blog/blog_list">Blog List</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-company" aria-expanded="false" aria-controls="ui-company">
+        <i class="menu-icon mdi mdi-format-list-bulleted"></i>
+        <span class="menu-title">Company</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-company">
+        <ul class="nav flex-column sub-menu">
+
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/company-list">Company List</a>
+          </li>
+        </ul>
+      </div>
+    </li>
 
 
 
 
 
-          
+
           <!-- <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <i class="menu-icon mdi mdi-backup-restore"></i>
