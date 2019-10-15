@@ -34,6 +34,9 @@ class Home extends CI_Controller
         $data['jobcats'] = $this->db->order_by('jobcat_id','desc')->limit(8)->get('tbl_job_category')->result_object();
 
 
+        $this->db->join('tbl_blog_category','tbl_blog_category.tbcid = tbl_blog.tbcid');
+        $data['blogs'] = $this->db->order_by('tbl_blog.blog_id','desc')->limit(8)->order_by('tbl_blog.blog_id','desc')->limit(3)->get('tbl_blog')->result_object();
+
         $this->load->view('front/lib/header',$data);
         $this->load->view('front/lib/banner');
         $this->load->view('front/home');

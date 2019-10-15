@@ -111,13 +111,10 @@ class Blog extends CI_Controller
                 if ($this->upload->do_upload('blog_attachment')) {
                     $upload_data = array('upload_data' => $this->upload->data());
                     $file = $upload_data['upload_data']['file_name'];
-
-                    $obj = new Image;
-                    $img = $obj->make($_FILES['blog_attachment']['tmp_name']);
-                    $img->fit(235, 180);
-                    $img->save('uploads/blog/'.$file_name);
-
-                    $this->db->set(['blog_attachment'=>$file,'thumb'=>$file_name]);
+                    //$obj = new Image;
+                    //$img = $obj->make($_FILES['blog_attachment']['tmp_name']);
+                    //$img->save('uploads/blog/'.$file_name);
+                    $this->db->set(['thumb'=>$file]);
                     $this->db->where('blog_id',$insert_id);
                     $this->db->update('tbl_blog');   
                 }

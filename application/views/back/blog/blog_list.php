@@ -76,15 +76,15 @@
 
                                      <?php if($blog->blog_status == 'published'): ?>
 
-                                        <a href="#" class="btn btn-icon btn-success" ><i class="ik ik-check"></i></a>
+                                        <a href="#" class="btn btn-icon btn-success" >Published</a>
 
                                         <?php elseif($blog->blog_status == 'pending'): ?>
 
-                                         <a href="#" class="btn btn-icon btn-info" ><i class="ik ik-loader"></i></a>
+                                         <a href="#" class="btn btn-icon btn-info" >Pending</a>
 
                                          <?php elseif($blog->blog_status == 'draft'): ?>
 
-                                             <a href="#" class="btn btn-icon btn-warning" ><i class="ik ik-file-minus"></i></a>
+                                             <a href="#" class="btn btn-icon btn-warning" >Draft</a>
 
                                          <?php endif; ?>   
 
