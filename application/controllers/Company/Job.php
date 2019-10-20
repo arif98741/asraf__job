@@ -15,9 +15,7 @@ class Job extends CI_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->helper('security');
-        if (!$this->session->company) {
-            redirect(base_url(),'refresh');
-        }
+        
     }
 
     /*
@@ -27,6 +25,10 @@ class Job extends CI_Controller
     */
     public function add_job()
     {
+       if (!$this->session->company) {
+            $this->session->set_flashdata('error', 'You must have to login');
+            redirect('login','refresh');
+        } 
         $data['jobcats'] = $this->db->order_by('jobcat_name')->get('tbl_job_category')->result_object();
 
         $this->load->view('front/lib/header',$data);

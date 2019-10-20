@@ -38,12 +38,8 @@
                     <div class="three columns">
                         <h4>Browse</h4>
                         <ul class="footer-links">
-                            <li><a href="#">Freelancers by Category</a></li>
-                            <li><a href="#">Freelancers in USA</a></li>
-                            <li><a href="#">Freelancers in UK</a></li>
-                            <li><a href="#">Freelancers in Canada</a></li>
-                            <li><a href="#">Freelancers in Australia</a></li>
-                            <li><a href="#">Find Jobs</a></li>
+                            <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">Freelancers by Category</a></li>
+                            <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Find Jobs</a></li>
 
                         </ul>
                     </div>

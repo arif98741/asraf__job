@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="six columns">
-			<a href="add-job.html" class="button">Post a Job, It’s Free!</a>
+			<a href="<?php echo base_url(); ?>company/job/add_job" class="button">Post a Job, It’s Free!</a>
 		</div>
 
 	</div>

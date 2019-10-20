@@ -35,68 +35,70 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-               <?php echo form_open('company/company/save_company',array('class'=> 'login100-form validate-form')) ?>
+             <?php echo form_open('company/company/save_company',array('class'=> 'login100-form validate-form')) ?>
 
-               <span class="login100-form-title p-b-33">
-                Provider Register
-            </span>
-            <?php if($this->session->success): ?>
-               <p class="alert alert-success  message"><?php echo $this->session->success; ?></p>
+             <span class="login100-form-title p-b-33">
+                 Job Provider Registration
+             </span>
+             <?php if($this->session->success): ?>
+                 <p class="alert alert-success  message"><?php echo $this->session->success; ?></p>
 
-           <?php endif; ?>
+             <?php endif; ?>
 
-            <?php if($this->session->error): ?>
-               <p class="alert alert-warning message"><?php echo $this->session->error; ?></p>
+             <?php if($this->session->error): ?>
+                 <p class="alert alert-warning message"><?php echo $this->session->error; ?></p>
 
-           <?php endif; ?>
+             <?php endif; ?>
 
-           <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="company_name" placeholder="Company Name" required="">
-            <span class="focus-input100-1"></span>
-            <span class="focus-input100-2"></span>
-        </div>
+             <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="company_name" placeholder="Company Name" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
 
-        <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="email" placeholder="Company Email" required="">
-            <span class="focus-input100-1"></span>
-            <span class="focus-input100-2"></span>
-        </div>
+            <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="email" placeholder="Company Email" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
 
-        <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="full_name" placeholder="Author Name" required="">
-            <span class="focus-input100-1"></span>
-            <span class="focus-input100-2"></span>
-        </div>
-
-
-        <div class="wrap-input100" data-validate="">
-            <input class="input100" type="text" name="location" placeholder="Location" required="">
-            <span class="focus-input100-1"></span>
-            <span class="focus-input100-2"></span>
-        </div>
-
-        <div class="wrap-input100 rs1" data-validate="Password is required">
-            <input class="input100" type="password" name="password" placeholder="Password" required="">
-            <span class="focus-input100-1"></span>
-            <span class="focus-input100-2"></span>
-        </div>
-
-        <div class="wrap-input100 rs1" data-validate="Password is required">
-            <input class="input100" type="password" name="password_confirm" placeholder="Confirm Password" required="">
-            <span class="focus-input100-1" ></span>
-            <span class="focus-input100-2"></span>
-        </div>
-
-        <div class="container-login100-form-btn m-t-20">
-            <button type="submit" class="login100-form-btn" name="SUBMIT">
-                Register
-            </button>
-        </div>
+            <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="full_name" placeholder="Author Name" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
 
 
+            <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="location" placeholder="Location" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
 
-    </form>
-</div>
+            <div class="wrap-input100 rs1" data-validate="Password is required">
+                <input class="input100" type="password" name="password" placeholder="Password" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
+
+            <div class="wrap-input100 rs1" data-validate="Password is required">
+                <input class="input100" type="password" name="password_confirm" placeholder="Confirm Password" required="">
+                <span class="focus-input100-1" ></span>
+                <span class="focus-input100-2"></span>
+            </div>
+
+            <div class="container-login100-form-btn m-t-20">
+                <button type="submit" class="login100-form-btn" name="SUBMIT">
+                    Register
+                </button>
+            </div>
+            <br>
+            <a href="<?php echo base_url(); ?>">Go back to home</a>
+
+
+
+        </form>
+    </div>
 </div>
 </div>
 

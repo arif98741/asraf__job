@@ -9,7 +9,7 @@
     <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
-        <title>Work Scout</title>
+        <title>Job Portal</title>
 
     <!-- Mobile Specific Metas
         ================================================== -->
@@ -54,13 +54,8 @@
                                 <li>
                                     <a href="#">Pages</a>
                                     <ul>
-                                        <li><a href="job-page.php">Job Page</a></li>
-                                        <li><a href="job-page-alt.php">Job Page Alternative</a></li>
-                                        <li><a href="resume-page.php">Resume Page</a></li>
-                                        <li><a href="shortcodes.php">Shortcodes</a></li>
-                                        <li><a href="icons.php">Icons</a></li>
-                                        <li><a href="pricing-tables.php">Pricing Tables</a></li>
-                                        <li><a href="contact.php">Contact</a></li>
+                                        <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Job Page</a></li>
+                                        <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
                                     </ul>
                                 </li>
 

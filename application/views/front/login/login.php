@@ -6,7 +6,7 @@
         <h2 style="text-align: center;">Login Page</h2><hr>
         <div class="col-md-4" style="margin: 0 auto; max-width: 600px;">
             <?php if($this->session->error): ?>
-                <p class="alert alert-warning" id="message" style="color:white; background: orange; padding: 5px;"><?php echo $this->session->error; ?></p><br>
+                <p class="alert alert-warning" id="message" style="color:white; background: orange; padding: 6px;"><?php echo $this->session->error; ?></p><br>
             <?php endif; ?>
             <?php echo form_open('login/login',array('class'=> 'login')) ?>
 

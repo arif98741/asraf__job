@@ -28,7 +28,7 @@ class Job extends CI_Controller
         $data['total_job'] = $this->db->get('tbl_job')->num_rows();
 
         $row  = $this->db->get('tbl_job')->num_rows();
-        $perpage = 2;
+        $perpage = 5;
         $offset = ($page_id-1) * $perpage;
         $data['previous_page']      = $page_id - 1;
         $data['next_page']          = $page_id + 1;
@@ -96,7 +96,7 @@ class Job extends CI_Controller
         $data['total_job'] = $this->db->get('tbl_job')->num_rows();
 
         $row  = $this->db->get('tbl_job')->num_rows();
-        $perpage = 2;
+        $perpage = 5;
         $offset = ($page_id-1) * $perpage;
         $data['previous_page']      = $page_id - 1;
         $data['next_page']          = $page_id + 1;
