@@ -131,7 +131,7 @@ class Job extends CI_Controller
     
         $this->load->view('back/lib/header',$data);
         $this->load->view('back/lib/sidebar');
-        $this->load->view('back/edit_job');
+        $this->load->view('back/job/edit_job');
         $this->load->view('back/lib/footer'); 
     }
 
