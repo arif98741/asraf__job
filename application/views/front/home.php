@@ -196,18 +196,18 @@ if ($this->session->success) { ?>
             <div class="recent-post">
 
                 <?php if(!empty($blog->thumb)): ?>
-                    <div class="recent-post-img"><a href="blog-single-post.php"><img src="<?php echo base_url(); ?>uploads/blog/<?php echo $blog->thumb; ?>" alt=""></a><div class="hover-icon"></div></div>
+                    <div class="recent-post-img"><a href="<?php echo base_url(); ?>blog/<?php echo $blog->blog_id; ?>"><img src="<?php echo base_url(); ?>uploads/blog/<?php echo $blog->thumb; ?>" style="max-height: 250px; width: 100%;" alt=""></a><div class="hover-icon"></div></div>
                     <?php else: ?>
-                        <div class="recent-post-img"><a href="blog-single-post.php"><img src="<?php echo base_url(); ?>uploads/blog/default.png" style="width: 100%; height: 253px;" alt=""></a><div class="hover-icon"></div></div>
+                        <div class="recent-post-img"><a href="<?php echo base_url(); ?>blog/<?php echo $blog->blog_id; ?>"><img src="<?php echo base_url(); ?>uploads/blog/default.png" style="width: 100%; height: 253px;" alt=""></a><div class="hover-icon"></div></div>
                     <?php endif; ?>
 
-                    <a href="blog-single-post.php"><h4><?php echo $blog->blog_title; ?></h4></a>
+                    <a href="<?php echo base_url(); ?>blog/<?php echo $blog->blog_id; ?>"><h4><?php echo $blog->blog_title; ?></h4></a>
                     <div class="meta-tags">
                         <span><?php echo date('F d, Y',strtotime($blog->create)); ?></span>
                         <span><a href="#">0 Comments</a></span>
                     </div>
                     <?php echo substr($blog->blog_description, 0,150); ?>
-                    <a href="blog-single-post.php" class="button">Read More</a>
+                    <a href="<?php echo base_url(); ?>blog/<?php echo $blog->blog_id; ?>" class="button">Read More</a>
                 </div>
             </div>
         <?php } ?>
