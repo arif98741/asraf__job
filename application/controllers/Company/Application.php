@@ -47,16 +47,51 @@ class Application extends CI_Controller
         }
         
         $this->db->where(['company_id'=>$this->session->company_id,'tbl_job.job_id'=>$job_id]);
+        $this->db->order_by('applications.application_id','desc');
         $data['applications'] = $this->db->get('tbl_job')->result_object();
-
-        // echo '<pre>';
-        // print_r($data['applications']); exit;
-        
 
         $this->load->view('front/lib/header',$data);
         $this->load->view('front/company/job/manage_applications');
         $this->load->view('front/lib/footer');
     }
+
+
+    /*
+    !--------------------------------------------------------
+    !       Manage Job
+    !--------------------------------------------------------
+    */
+    public function manage_all_applications($page_id=1)
+    {
+        $this->db->join('applications','applications.job_id = tbl_job.job_id','left');
+        $this->db->join('seeker','applications.seeker_id = seeker.seeker_id');
+        $this->db->where(['tbl_job.company_id'=>$this->session->company_id]);
+        $row  =  $this->db->get('tbl_job')->num_rows();
+        $perpage = 5;
+        $offset = ($page_id-1) * $perpage;
+        $previous_page      = $page_id - 1;
+        $next_page          = $page_id + 1;
+        $total_no_of_pages  = ceil($row / $perpage);
+        $this->db->join('applications','applications.job_id = tbl_job.job_id','left');
+        $this->db->join('seeker','applications.seeker_id = seeker.seeker_id');
+        $this->db->where(['tbl_job.company_id'=>$this->session->company_id]);
+        $this->db->order_by('applications.application_id','desc');
+        $this->db->limit($perpage,$offset);
+        $data['applications'] = $this->db->get('tbl_job')->result_object();
+
+        $data['row']    = $row;
+        $data['page_id']   = $page_id;
+        $data['total_no_of_pages']  = (int)$total_no_of_pages;
+        $data['previous_page']  = $previous_page;
+        $data['next_page']      = $next_page;
+
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/company/job/manage_all_applications');
+        $this->load->view('front/lib/footer');
+    }
+
+    
 
 
     /*

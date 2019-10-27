@@ -17,7 +17,7 @@
 					<div class="resumes-list-content">
 						<h4><?php echo $seeker->name; ?> <span><?php echo $seeker->tagline; ?></span></h4>
 						<span class="icons"><i class="fa fa-map-marker"></i> <?php echo $seeker->address; ?></span>
-						<span class="icons"><i class="fa fa-money"></i> $100 / hour</span>
+						<span class="icons"><i class="fa fa-money"></i> <?php echo $seeker->rate; ?></span>
 						<span class="icons"><a href="<?php echo $seeker->website; ?>"><i class="fa fa-link"></i> Website</a></span>
 						<span class="icons"><a href="mailto:<?php echo $seeker->email; ?>"><i class="fa fa-envelope"></i> <?php echo $seeker->email; ?></a></span>
 						<div class="skills">
@@ -44,7 +44,7 @@
 
 					<div id="edit-profile" class="zoom-anim-dialog mfp-hide apply-popup">
 						<div class="small-dialog-headline">
-							<h2>Send Message to John Doe</h2>
+							<h2>Send Message to <?php echo $seeker->name; ?></h2>
 						</div>
 
 						<div class="small-dialog-content">
@@ -53,7 +53,7 @@
 								<input type="text" placeholder="Email Address" value="">
 								<textarea placeholder="Message"></textarea>
 
-								<button class="send">Send Application</button>
+								<button class="send">Send Message</button>
 							</form>
 						</div>
 
@@ -62,7 +62,7 @@
 
 					<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
 						<div class="small-dialog-headline">
-							<h2>Send Message to John Doe</h2>
+							<h2>Send Message to <?php echo $seeker->name; ?></h2>
 						</div>
 
 						<div class="small-dialog-content">
@@ -71,7 +71,7 @@
 								<input type="text" placeholder="Email Address" value="">
 								<textarea placeholder="Message"></textarea>
 
-								<button class="send">Send Application</button>
+								<button class="send">Send Message</button>
 							</form>
 						</div>
 

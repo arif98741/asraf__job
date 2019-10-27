@@ -85,13 +85,14 @@
 
                                         <li><a href="<?php echo base_url(); ?>company/job/add_job">Add Job</a></li>
                                         <li><a href="<?php echo base_url(); ?>company/job/manage_jobs">Manage Jobs</a></li>
-                                        <li><a href="manage-applications.php">Manage Applications</a></li>
-                                        <li><a href="browse-resumes.php">Browse Resumes</a></li>
+                                        <li><a href="<?php echo base_url(); ?>company/application/manage_all_applications">Manage Applications</a></li>
+                                       
                                         <?php else: ?>
 
                                             <li><a href="<?php echo base_url(); ?>provider_registration">Register</a></li>
                                         <?php endif;?>
 
+                                         <li><a href="<?php echo base_url(); ?>browse_resumes/1">Browse Resumes</a></li>
                                     </ul>
                                 </li>
 
@@ -137,7 +138,8 @@
 
                         <!-- Logo -->
                         <div id="logo">
-                            <h1><a href="<?php  echo base_url(); ?>"><img src="<?php echo base_url(); ?>asset/front/images/logo2.png" alt="Work Scout"></a></h1>
+<!--                            <h1><a href="--><?php // echo base_url(); ?><!--">sdfsdkjflksdflkj<img src="--><?php //echo base_url(); ?><!--asset/front/images/logo2.png" alt="Work Scout"></a></h1>-->
+                            <h1>Job Portal</h1>
                         </div>
 
                         <!-- Menu -->

@@ -49,7 +49,7 @@
 						<div class="info">
 
 							<?php if(!empty($application->image)): ?>
-								<img src="<?php echo base_url(); ?>uploads/seeker/<?php echo $application->image; ?>" alt="">
+								<img src="<?php echo base_url(); ?>uploads/seeker/image/<?php echo $application->image; ?>" alt="">
 								<?php else: ?>
 
 									<img src="https://www.netclipart.com/pp/m/232-2329525_person-svg-shadow-default-profile-picture-png.png" alt="">

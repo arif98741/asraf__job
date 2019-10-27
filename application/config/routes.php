@@ -61,8 +61,9 @@ $route['seeker/registration']	  = 'seeker/seeker/registration';
 $route['provider_registration']	  = 'company/company/registration';	
 $route['company/logout']	  	= 'company/company/logout';	
 $route['seeker/logout']	  		= 'seeker/seeker/logout';	
-$route['page/(:num)/(:any)']	= 'home/view_page/$1/$2';	
-
+$route['page/(:num)/(:any)']	= 'home/view_page/$1/$2';
+$route['browse_resumes/(:num)']	= 'seeker/seeker/browse_resumes/$1';
+$route['search/(:num)/(:any)']	= 'home/search_page/$1/$2';
 
 $route['404_override'] 		   = 'error404'; //override by controller
 $route['translate_uri_dashes'] = FALSE;

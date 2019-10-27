@@ -67,7 +67,7 @@ if ($this->session->success) { ?>
                             <div class="job-icons">
                                 <span><i class="fa fa-briefcase"></i> <?php echo $front_job->company_name; ?></span>
                                 <span><i class="fa fa-map-marker"></i>  <?php echo $front_job->location; ?></span>
-                                <span><i class="fa fa-money"></i> <?php echo $front_job->salary; ?></span>
+                                <span><i class="fa fa-money"></i> ৳<?php echo $front_job->salary; ?></span>
                             </div>
                         </div>
 
@@ -138,23 +138,34 @@ if ($this->session->success) { ?>
                     <li>
                         <p>
                             I have already heard back about the internship I applied through Job Finder, that's the fastest job reply I've ever gotten and it's so much better than waiting weeks to hear back.
-                            <span>Collis Ta’eed, Envato</span>
+                            <span>Asraf Uz Zaman</span>
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Nam eu eleifend nulla. Duis consectetur sit amet risus sit amet venenatis. Pellentesque pulvinar ante a tincidunt placerat. Donec dapibus efficitur arcu, a rhoncus lectus egestas elementum.
-                            <span>John Doe</span>
+                            Its an awesome platform for finding real experienced clients for job
+                            <span>Sakil Reza</span>
                         </p>
                     </li>
 
                     <li>
                         <p>
-                            Maecenas congue sed massa et porttitor. Duis placerat commodo ex, ut faucibus est facilisis ac. Donec eleifend arcu sed sem posuere aliquet. Etiam lorem metus, suscipit vel tortor vitae.
-                            <span>Tom Smith</span>
+                            We always recommended this platform for interacting with company and job seekers.
+                            <span>Sumon Khan</span>
                         </p>
                     </li>
+
+
+
+                     <li>
+                        <p>
+                            For ensuring and getting experienced  employee I recommend this website always.
+                            <span>Salekin Sayed </span>
+                        </p>
+                    </li>
+
+
 
                 </ul>
             </div>

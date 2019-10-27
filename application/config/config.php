@@ -113,4 +113,6 @@ date_default_timezone_set('Asia/Dhaka');
 
 $path =  pathinfo(__DIR__);
 require $path['dirname'].'../../vendor/autoload.php';
+define('JOB_PER_PAGE', 10);
+
 

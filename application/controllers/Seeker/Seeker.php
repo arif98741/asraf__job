@@ -136,6 +136,45 @@ class Seeker extends CI_Controller
 
     /*
     !--------------------------------------------------------
+    !     Brose Resumes
+    !--------------------------------------------------------
+    */
+    public function browse_resumes($page_id = 1)
+    {
+
+        $row  =  $this->db->get('seeker')->num_rows();
+        $perpage = 5;
+        $offset = ($page_id-1) * $perpage;
+        $previous_page      = $page_id - 1;
+        $next_page          = $page_id + 1;
+        $total_no_of_pages  = ceil($row / $perpage);
+
+
+        $this->db->order_by('rand()');
+        $this->db->limit($perpage,$offset);
+        $data['seekers'] = $this->db->get('seeker')->result_object();
+        $data['row']    = $row;
+        $data['page_id']   = $page_id;
+        $data['total_no_of_pages']  = (int)$total_no_of_pages;
+        $data['previous_page']  = $previous_page;
+        $data['next_page']      = $next_page;
+
+        //echo '<pre>';
+        //print_r($data['seekers']); exit;
+
+
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/seeker/browse_resumes');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+
+
+
+
+    /*
+    !--------------------------------------------------------
     !     Seeker Logout
     !--------------------------------------------------------
     */

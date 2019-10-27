@@ -55,10 +55,11 @@ class Job extends CI_Controller
         $data['tags'] = $this->input->post('tags');
         $data['job_description'] = $this->input->post('job_description');
         $data['deadline'] = $this->input->post('deadline');
+        $data['application_urlmail  '] = $this->input->post('application_urlmail   ');
         $data['tagline'] = $this->input->post('tagline');
 
         $this->db->insert('tbl_job',$data);
-        $this->session->set_flashdata('success', 'Registered successfully');
+        $this->session->set_flashdata('success', 'Job Added successfully');
         redirect(base_url());
 
     }
@@ -98,10 +99,6 @@ class Job extends CI_Controller
 
         $data['job_tag'] = $this->db->order_by('jobcat_name')->get('tbl_job_category')->result_object();
 
-        
-
-
-
         $this->db->where('job_id',$job_id);
         $data['job'] = $this->db->get('tbl_job')->row();
 
@@ -109,6 +106,39 @@ class Job extends CI_Controller
         $this->load->view('front/company/job/edit_job');
         $this->load->view('front/lib/footer');
     }
+
+
+    /*
+    !--------------------------------------------------------
+    !    Update Job
+    !--------------------------------------------------------
+    */
+    public function update_job($job_id)
+    {
+        if (!$this->session->company) {
+            redirect(base_url(),'refresh');
+        }
+
+        $data['job_title'] = $this->input->post('job_title');
+        $data['location'] = $this->input->post('location');
+        $data['job_type'] = $this->input->post('job_type');
+        $data['jobcat_id'] = $this->input->post('jobcat_id');
+        $data['company_id'] = $this->session->company_id;
+        $data['salary'] = $this->input->post('salary');
+        $data['tags'] = $this->input->post('tags');
+        $data['job_description'] = $this->input->post('job_description');
+        $data['deadline'] = $this->input->post('deadline');
+        $data['application_urlmail  '] = $this->input->post('application_urlmail  ');
+        $data['tagline'] = $this->input->post('tagline');
+
+        $this->db->set($data);
+        $this->db->where('job_id',$job_id)->update('tbl_job');
+        $this->session->set_flashdata('success', 'Job Updated Successfully');
+        redirect(base_url());
+    }
+
+
+    
 
 
 
@@ -128,9 +158,6 @@ class Job extends CI_Controller
 
 
     }
-
-
-
 
 
     /*

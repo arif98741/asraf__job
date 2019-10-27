@@ -20,7 +20,7 @@
                             <li><a href="<?php echo base_url(); ?>blog">Our Blog</a></li>
                             <li><a href="<?php echo base_url(); ?>page/97/terms-and-conditions">Terms of Service</a></li>
                             <li><a href="<?php echo base_url(); ?>page/98/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="#">Hiring Hub</a></li>
+                        
                         </ul>
                     </div>
 
@@ -29,7 +29,6 @@
                         <ul class="footer-links">
                             <li><a href="#">In the News</a></li>
                             <li><a href="#">Press Releases</a></li>
-                            <li><a href="#">Awards</a></li>
                             <li><a href="#">Testimonials</a></li>
                             <li><a href="#">Timeline</a></li>
                         </ul>
@@ -38,7 +37,7 @@
                     <div class="three columns">
                         <h4>Browse</h4>
                         <ul class="footer-links">
-                            <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">Freelancers by Category</a></li>
+                            <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs_by_category/19">Freelancers by Category</a></li>
                             <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Find Jobs</a></li>
 
                         </ul>
@@ -57,7 +56,7 @@
                                 <li><a class="gplus" href="https://www.facebook.com/capuchino.coffee.980"><i class="icon-gplus"></i></a></li>
                                 <li><a class="linkedin" href="https://www.facebook.com/capuchino.coffee.980"><i class="icon-linkedin"></i></a></li>
                             </ul>
-                            <div class="copyrights">©  Copyright 2016 by <a href="#">NVT Company</a>. All Rights Reserved.</div>
+                            <div class="copyrights">©  Copyright 2019 by <a href="#"> Company</a>. All Rights Reserved.</div>
                         </div>
                     </div>
                 </div>

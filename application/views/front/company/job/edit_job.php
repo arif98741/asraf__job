@@ -18,7 +18,7 @@
 			<div class="notification notice closeable margin-bottom-40">
 				<p><span>Please fill up all data correctly</span></p>
 			</div>
-			<?php echo form_open('company/job/save_job',array()) ?>
+			<?php echo form_open('company/job/update_job/'.$job->job_id,array()) ?>
 			
 
 			<!-- Title -->
@@ -79,7 +79,7 @@
 			<div class="form">
 				<h5>Job Tags <span>(optional)</span></h5>
 
-				<input class="search-field" type="text" name="tags" placeholder="e.g. PHP, Social Media, Management" value=""/>
+				<input class="search-field" type="text" name="tags" value="<?php echo $job->tags; ?>" placeholder="e.g. PHP, Social Media, Management" value=""/>
 
 				<p class="note">Comma separate tags, such as required skills or technologies, for this job.</p>
 			</div>
@@ -97,7 +97,7 @@
 			<div class="form">
 				<h5>Application email / URL</h5>
 
-				<input type="text" name="joburl" value="<?php echo $job->application_urlmail; ?>" placeholder="Enter an email address or website URL">
+				<input type="text" name="application_urlmail	" value="<?php echo $job->application_urlmail	; ?>" placeholder="Enter an email address or website URL">
 
 			</div>
 
@@ -115,21 +115,11 @@
 			<div class="form">
 				<h5>Tagline <span>(optional)</span></h5>
 
-				<input type="text" name="tagline" placeholder="Briefly describe your company">
+				<input type="text" name="tagline" value="<?php echo $job->tagline; ?>"  placeholder="Briefly describe your company">
 
 			</div>
 
-			<!-- Logo -->
-			<div class="form">
-				<h5>Logo <span>(optional)</span></h5>
-				<label class="upload-btn">
-
-					<input type="file" name="logo" accept="image/*" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-
-					<i class="fa fa-upload"></i> Browse
-				</label>
-				<span class="fake-input">No file selected</span>
-			</div>
+	
 
 			<div class="form">
 				<h5>File <span>(optional)</span></h5>
@@ -144,7 +134,7 @@
 
 			<div class="divider margin-top-0"></div>
 
-			<button class="button big margin-top-5" type="submit" name="add_job">Add Job<i class="fa fa-arrow-circle-right"></i></button>
+			<button class="button big margin-top-5" type="submit" name="add_job">Update Job<i class="fa fa-arrow-circle-right"></i></button>
 		</form>
 	</div>
 </div>

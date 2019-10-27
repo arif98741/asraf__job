@@ -97,7 +97,7 @@
 			<div class="form">
 				<h5>Application email / URL</h5>
 
-				<input type="text" name="joburl" placeholder="Enter an email address or website URL">
+				<input type="text" name="application_urlmail" placeholder="Enter an email address or website URL">
 
 			</div>
 
