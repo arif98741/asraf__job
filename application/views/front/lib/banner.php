@@ -16,7 +16,7 @@
 
                 <!-- Browse Jobs -->
                 <div class="browse-jobs">
-                    Browse job offers by <a href="browse-categories.php"> category</a> or <a href="#">location</a>
+                    Browse job offers by <a href="<?php echo base_url(); ?>seeker/job/manage_categories"> category</a> <!-- or <a href="#">location</a> -->
                 </div>
 
                 <!-- Announce -->
