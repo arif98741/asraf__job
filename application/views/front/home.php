@@ -138,34 +138,23 @@ if ($this->session->success) { ?>
                     <li>
                         <p>
                             I have already heard back about the internship I applied through Job Finder, that's the fastest job reply I've ever gotten and it's so much better than waiting weeks to hear back.
-                            <span>Asraf Uz Zaman</span>
+                            <span>Mirana Bulbul</span>
                         </p>
                     </li>
 
                     <li>
                         <p>
                             Its an awesome platform for finding real experienced clients for job
-                            <span>Sakil Reza</span>
+                            <span>Subrata Basak</span>
                         </p>
                     </li>
 
                     <li>
                         <p>
                             We always recommended this platform for interacting with company and job seekers.
-                            <span>Sumon Khan</span>
+                            <span>Salauddin Shiplu</span>
                         </p>
                     </li>
-
-
-
-                    <li>
-                        <p>
-                            For ensuring and getting experienced  employee I recommend this website always.
-                            <span>Salekin Sayed </span>
-                        </p>
-                    </li>
-
-
 
                 </ul>
             </div>

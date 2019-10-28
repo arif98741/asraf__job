@@ -100,13 +100,11 @@ class Application extends CI_Controller
     !--------------------------------------------------------
     */
     public function update_note($application_id)
-    {
-        echo $application_id; exit;
-        
+    {     
         $this->db->set('apply_note',$this->input->post('apply_note'));
         $this->db->where(['application_id'=>$application_id]);
         $this->db->update('applications');
-        $this->session->set_flashdata('success', 'Note updated successfully');
+        $this->session->set_flashdata('login_success', 'Note updated successfully');
         redirect(base_url());
     }
 }

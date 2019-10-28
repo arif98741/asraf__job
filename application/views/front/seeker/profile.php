@@ -40,8 +40,6 @@
 
 					<a href="#small-dialog" class="popup-with-zoom-anim button"><i class="fa fa-envelope"></i> Send Message</a>
 
-					
-
 					<div id="edit-profile" class="zoom-anim-dialog mfp-hide apply-popup">
 						<div class="small-dialog-headline">
 							<h2>Send Message to <?php echo $seeker->name; ?></h2>
@@ -66,12 +64,12 @@
 						</div>
 
 						<div class="small-dialog-content">
-							<form action="#" method="get">
+							<?php echo form_open('company/message/save_message', array()); ?>
 								<input type="text" placeholder="Full Name" value="">
-								<input type="text" placeholder="Email Address" value="">
+								<input type="text" placeholder="Email your Address" value="">
 								<textarea placeholder="Message"></textarea>
 
-								<button class="send">Send Message</button>
+								<button type="submit" class="send">Send Message</button>
 							</form>
 						</div>
 
@@ -84,9 +82,6 @@
 						<?php endif; ?>
 
 						<a href="#" class="button dark"><i class="fa fa-star"></i> Bookmark This Resume</a>
-
-
-
 
 					</div>
 				</div>
