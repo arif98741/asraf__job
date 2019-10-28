@@ -62,7 +62,7 @@
                                 <li>
                                     <a href="#">For Candidates</a>
                                     <ul>
-                                     <?php if($this->session->seeker): ?>
+                                       <?php if($this->session->seeker): ?>
 
                                         <li><a href="add-resume.php">Add Resume</a></li>
 
@@ -72,7 +72,8 @@
 
                                     <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Browse Jobs</a></li>
                                     <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">Browse Categories</a></li>
-                                    <li><a href="manage-resumes.php">Manage Resumes</a></li>
+                                    <!--  <li><a href="manage-resumes.php">Manage Resumes</a></li> -->
+                                    <li><a href="<?php echo base_url(); ?>browse_resumes/1">Browse Resumes</a></li>
 
 
                                 </ul>
@@ -92,7 +93,7 @@
                                             <li><a href="<?php echo base_url(); ?>provider_registration">Register</a></li>
                                         <?php endif;?>
 
-                                        <li><a href="<?php echo base_url(); ?>browse_resumes/1">Browse Resumes</a></li>
+                                        
                                     </ul>
                                 </li>
 
@@ -108,11 +109,11 @@
 
                                 <?php if($this->session->seeker): ?>
 
-                                   <li><a href="<?php echo base_url(); ?>seeker/seeker/profile/<?php echo $this->session->seeker_id; ?>"><i class="fa fa-user"></i> Profile</a></li>
-                                   <li><a href="<?php echo base_url(); ?>seeker/logout"><i class="fa fa-lock"></i> Log out</a></li>
-                               <?php endif; ?>
+                                 <li><a href="<?php echo base_url(); ?>seeker/seeker/profile/<?php echo $this->session->seeker_id; ?>"><i class="fa fa-user"></i> Profile</a></li>
+                                 <li><a href="<?php echo base_url(); ?>seeker/logout"><i class="fa fa-lock"></i> Log out</a></li>
+                             <?php endif; ?>
 
-                               <?php if(!$this->session->seeker && !$this->session->company): ?>
+                             <?php if(!$this->session->seeker && !$this->session->company): ?>
                                 <li><a href="<?php echo base_url(); ?>seeker/registration"><i class="fa fa-user"></i> Sign Up</a></li>
                                 <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-lock"></i> Log in</a></li>
                             <?php endif; ?>

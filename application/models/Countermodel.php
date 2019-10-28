@@ -35,6 +35,14 @@ class Countermodel extends CI_Model
         return $result->result_id->num_rows;
     }
 
+    public function totalSeeker()
+    {
+        $result = $this->db->query("select * from seeker");
+        return $result->result_id->num_rows;
+    }
+
+    
+
     
 
     

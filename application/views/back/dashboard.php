@@ -27,7 +27,7 @@
               <div class="float-right">
                 <p class="mb-0 text-right">Total Jobs</p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">000</h3>
+                  <h3 class="font-weight-medium text-right mb-0"><?php echo $total_job; ?></h3>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
               <div class="float-right">
                 <p class="mb-0 text-right">Total Job Category </p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">000</h3>
+                  <h3 class="font-weight-medium text-right mb-0"><?php echo $total_category; ?></h3>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
               <div class="float-right">
                 <p class="mb-0 text-right">Industry</p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">00</h3>
+                  <h3 class="font-weight-medium text-right mb-0"><?php echo $total_company; ?></h3>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
               <div class="float-right">
                 <p class="mb-0 text-right">Employees</p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">00</h3>
+                  <h3 class="font-weight-medium text-right mb-0"><?php echo $total_employee; ?></h3>
                 </div>
               </div>
             </div>

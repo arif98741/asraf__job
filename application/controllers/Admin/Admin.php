@@ -41,8 +41,13 @@ class Admin extends CI_Controller
         if (!$this->session->has_userdata('login')) {
             redirect('admin');
         }
+        $data['total_category'] = $this->countermodel->totalCategory();
+        $data['total_job'] = $this->countermodel->totalJob();
+        $data['total_company'] = $this->countermodel->totalCompany();
+        $data['total_employee'] = $this->countermodel->totalSeeker();
 
-        $this->load->view('back/lib/header');
+
+        $this->load->view('back/lib/header',$data);
         $this->load->view('back/lib/sidebar');
         $this->load->view('back/dashboard');
         $this->load->view('back/lib/footer');
