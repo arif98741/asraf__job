@@ -39,7 +39,7 @@
 
                         <!-- Logo -->
                         <div id="logo">
-                            <h1><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>asset/front/images/logo2.png" alt="Work Scout" /></a></h1>
+                            <h1><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>asset/front/images/logo2.png" alt="Work Scout" style="width: 60%; margin-top: 0px; height: 40%;"/></a></h1>
                         </div>
 
                         <!-- Menu -->
@@ -139,8 +139,8 @@
 
                     <!-- Logo -->
                     <div id="logo">
-                        <!--                            <h1><a href="--><?php // echo base_url(); ?><!--">sdfsdkjflksdflkj<img src="--><?php //echo base_url(); ?><!--asset/front/images/logo2.png" alt="Work Scout"></a></h1>-->
-                        <h1>Job Portal</h1>
+                        <h1><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>asset/front/images/logo2.png" alt="Work Scout"></a></h1>
+                        <h1>Job Portal4</h1>
                     </div>
 
                     <!-- Menu -->
