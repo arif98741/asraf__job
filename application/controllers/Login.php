@@ -75,7 +75,7 @@ class Login extends CI_Controller
                     'company_email'  =>$data->email,
             );
            $this->session->set_userdata($session);
-           $this->session->set_flashdata('success', 'Successfully Logged in');
+           $this->session->set_flashdata('login_success', 'Successfully Logged in');
            redirect(base_url());
        }else{
             $this->session->set_flashdata('error', 'Username or password not matched');
@@ -102,7 +102,7 @@ class Login extends CI_Controller
             );
            $this->session->set_userdata($session);
            
-           $this->session->set_flashdata('success', 'Successfully Logged in');
+           $this->session->set_flashdata('login_success', 'Successfully Logged in');
            redirect(base_url());
        }else{
             $this->session->set_flashdata('error', 'Username or password not matched');

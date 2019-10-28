@@ -1,5 +1,5 @@
 
-<div id="banner" class="with-transparent-header parallax background" style="background-image: url(<?php echo base_url(); ?>asset/front/images/baground_temp.jpg)" data-img-width="2000" data-img-height="1330" data-diff="300">
+<div id="banner" class="with-transparent-header parallax background" style="background-image: url(<?php echo base_url(); ?>asset/front/images/temp_background.jpg)" data-img-width="2000" data-img-height="1330" data-diff="300">
     <div class="container">
         <div class="sixteen columns">
 

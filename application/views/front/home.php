@@ -1,6 +1,6 @@
 <?php 
 if ($this->session->success) { ?>
-    <script>alert('<?php echo $this->session->success; ?>');</script>
+    <?php echo $this->session->success; ?>
 <?php   }?>
 <!-- Categories -->
 <div class="container">
@@ -158,7 +158,7 @@ if ($this->session->success) { ?>
 
 
 
-                     <li>
+                    <li>
                         <p>
                             For ensuring and getting experienced  employee I recommend this website always.
                             <span>Salekin Sayed </span>

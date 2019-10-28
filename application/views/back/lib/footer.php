@@ -28,6 +28,13 @@
   <!-- Custom js for this page-->
   <script src="<?php echo base_url(); ?>/asset/back/js/dashboard.js"></script>
   <!-- End custom js for this page-->
+  <script>
+    $(document).ready(function() {
+      setTimeout(function(){
+        $('.message').slideUp(500);
+      },4000);
+    });
+  </script>
 </body>
 
 </html>

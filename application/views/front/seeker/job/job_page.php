@@ -40,6 +40,10 @@
 	</div>
 </div>
 <div class="container">
+	<?php 
+		//echo '<pre>';
+		//print_r($this->session->all_userdata());
+	?>
 	<?php if($this->session->error):?>
 
 
@@ -126,7 +130,7 @@
 				</ul>
 
 				<?php if (!$this->session->seeker) {  ?> 
-					<a href="#" onclick="alert('you must have login to apply.')" class="button">Apply For This Job</a>
+					<a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>" class="button">Apply For This Job</a>
 				<?php }else{?>
 
 					<a href="#small-dialog" class="popup-with-zoom-anim button">Apply For This Job</a>

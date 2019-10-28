@@ -170,9 +170,20 @@ class Seeker extends CI_Controller
     }
 
 
+    /*
+    !--------------------------------------------------------
+    !     Seeker Logout
+    !--------------------------------------------------------
+    */
+    public function seeker_job_apply($job_id)
+    {
+        $this->session->set_flashdata('error', 'You must have login to apply');
+        redirect(base_url().'seeker/job/job_page/'.$job_id);
+      
 
+    }
 
-
+    
     /*
     !--------------------------------------------------------
     !     Seeker Logout
@@ -185,9 +196,6 @@ class Seeker extends CI_Controller
         redirect(base_url());
 
     }
-
-
-
 
 
 
