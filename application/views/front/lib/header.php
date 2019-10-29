@@ -157,7 +157,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="#" class="sf-with-ul">Pages</a>
+                          <!--   <li><a href="#" class="sf-with-ul">Pages</a>
                                 <ul style="display: none;">
                                     <li><a href="job-page.html">Job Page</a></li>
                                     <li><a href="job-page-alt.html">Job Page Alternative</a></li>
@@ -167,7 +167,7 @@
                                     <li><a href="pricing-tables.html">Pricing Tables</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li><a href="#" id="current" class="sf-with-ul">For Candidates</a>
                                 <ul style="display: none;">

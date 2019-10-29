@@ -38,12 +38,24 @@ class Company extends CI_Controller
     */
     public function save_company()
     {
-        if ($this->db->where('email',$this->input->post('email'))->get('tbl_company')->num_rows() > 0) {
+
+        $email = $this->input->post('email');
+
+        $explode = explode('@', $email);
+        $data =  explode('.', $explode[1]);
+        // echo '<pre>';
+        // print_r($data);
+        // exit;
+
+        if ($data[0] == 'gmail') {
+            $this->session->set_flashdata('error', 'You must have to use company email');
+            redirect(base_url()."provider_registration");
+        }elseif ($this->db->where('email',$this->input->post('email'))->get('tbl_company')->num_rows() > 0) {
             $this->session->set_flashdata('error', 'Email already exist');
-            redirect(base_url()."employee_registration");
+            redirect(base_url()."provider_registration");
         }elseif($this->input->post('password') != $this->input->post('password_confirm')){
             $this->session->set_flashdata('error', 'Password not matched');
-            redirect(base_url()."employee_registration");
+            redirect(base_url()."provider_registration");
         }else{
             $this->db->insert('tbl_company',array(
                 'company_name' => $this->input->post('company_name'),
