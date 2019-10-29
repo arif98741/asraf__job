@@ -117,6 +117,18 @@ class Login extends CI_Controller
     !       Login Handeller
     !--------------------------------------------------------
     */
+    public function signup()
+    {
+        $this->load->view('front/lib/header');
+        $this->load->view('front/login/signup');
+        $this->load->view('front/lib/footer');
+    }
+
+    /*
+    !--------------------------------------------------------
+    !       Login Handeller
+    !--------------------------------------------------------
+    */
     public function logout()
     {
         $this->session->sess_destroy();

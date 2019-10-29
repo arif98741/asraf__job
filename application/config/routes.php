@@ -57,6 +57,7 @@ $route['admin/delete-page/(:num)']		= 'page/delete_page/$1';
 $route['recruiter/all']	 = "recruiter/all_recruiters";	
 
 $route['login']	  					= 'login/index';	
+$route['signup']	  			= 'login/signup';	
 $route['seeker/registration']	  = 'seeker/seeker/registration';	
 $route['provider_registration']	  = 'company/company/registration';	
 $route['company/logout']	  	= 'company/company/logout';	

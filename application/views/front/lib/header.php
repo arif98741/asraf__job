@@ -99,10 +99,13 @@
                                 </li>
                                 <li><a href="<?php echo base_url(); ?>/contact-us">Contact</a></li>
 
-                                 <li><a href="<?php echo base_url(); ?>/blogs">Blog</a></li>
+                                <li><a href="<?php echo base_url(); ?>/blogs">Blog</a></li>
 
-                                
-
+                                <li>
+                                    <div class="div" style="display: inline-block;">
+                                        <input type="text" style="max-width: 120px; height: 40px;  border-radius: 10px;" placeholder="Enter search keyword"> <!-- button style="display: block;" ><i class="fa fa-search"></i></button> -->
+                                    </div>
+                                </li>
 
                             </ul>
 
@@ -120,7 +123,7 @@
                              <?php endif; ?>
 
                              <?php if(!$this->session->seeker && !$this->session->company): ?>
-                                <li><a href="<?php echo base_url(); ?>seeker/registration"><i class="fa fa-user"></i> Sign Up</a></li>
+                                <li><a href="<?php echo base_url(); ?>signup"><i class="fa fa-user"></i> Sign Up</a></li>
                                 <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-lock"></i> Log in</a></li>
                             <?php endif; ?>
 
