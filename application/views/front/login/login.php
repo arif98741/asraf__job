@@ -42,9 +42,9 @@
                 </label> -->
             </p>
 
-           <!--  <p class="lost_password">
+            <p class="lost_password">
                 <a href="fpass.php">Lost Your Password?</a>
-            </p> -->
+            </p>
 
         </form>
     </div>

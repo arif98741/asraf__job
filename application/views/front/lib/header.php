@@ -99,7 +99,7 @@
                                 </li>
                                 <li><a href="<?php echo base_url(); ?>/contact-us">Contact</a></li>
 
-                                 <li><a href="<?php echo base_url(); ?>/blog/1">Blog</a></li>
+                                 <li><a href="<?php echo base_url(); ?>/blogs">Blog</a></li>
 
                                 
 

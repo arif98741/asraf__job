@@ -43,14 +43,14 @@ class Blog extends CI_Controller
     */
     public function view($blog_id)
     {
-        $data['blog']           = $this->blogmodel->blogs();
+        $data['blog']           = $this->blogmodel->single_blog($blog_id);
         $data['total_comment']  = $this->blogmodel->blog_comment_counter($blog_id);
         $data['comments']       = $this->blogmodel->blog_comments($blog_id);
         $data['recent_blogs']   = $this->blogmodel->recent_blog();
 
-        echo '<pre>';
-        print_r($data['blog']);
-        exit;
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/blog/blog_single');
+        $this->load->view('front/lib/footer'); 
 
     }
 
