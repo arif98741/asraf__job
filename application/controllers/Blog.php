@@ -23,16 +23,35 @@ class Blog extends CI_Controller
     ! Single Blog
     !-----------------------------------------
     */
+    public function index()
+    {
+       // $data['total_comment']  = $this->blogmodel->blog_comment_counter($blog_id);
+        //$data['comments']       = $this->blogmodel->blog_comments($blog_id);
+        $data['blogs']   = $this->blogmodel->blogs();
+    
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/blog/blog');
+        $this->load->view('front/lib/footer'); 
+    }
+
+
+
+    /*
+    !-----------------------------------------
+    ! Single Blog
+    !-----------------------------------------
+    */
     public function view($blog_id)
     {
-        $data['blog']           = $this->blogmodel->single_blog($blog_id);
+        $data['blog']           = $this->blogmodel->blogs();
         $data['total_comment']  = $this->blogmodel->blog_comment_counter($blog_id);
         $data['comments']       = $this->blogmodel->blog_comments($blog_id);
         $data['recent_blogs']   = $this->blogmodel->recent_blog();
-    
-        $this->load->view('front/lib/header',$data);
-        $this->load->view('front/blog/blog_single');
-        $this->load->view('front/lib/footer'); 
+
+        echo '<pre>';
+        print_r($data['blog']);
+        exit;
+
     }
 
     /*
@@ -42,8 +61,6 @@ class Blog extends CI_Controller
     */
     public function save_blog_comment()
     {
-      //  echo '<pre>';
-        //print_r($_POST); exit;
 
         $data['commentor']  = $this->input->post('commentor');
         $data['comment_email']  = $this->input->post('comment_email');

@@ -51,13 +51,13 @@
                                     
                                 </li>
 
-                                <li>
+                               <!--  <li>
                                     <a href="#">Pages</a>
                                     <ul>
                                         <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Job Page</a></li>
                                         <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
 
                                 <li>
                                     <a href="#">For Candidates</a>
@@ -79,6 +79,7 @@
                                 </ul>
                             </li>
 
+
                             <li>
                                 <a href="#">Job Providers</a>
                                 <ul>
@@ -96,6 +97,11 @@
                                         
                                     </ul>
                                 </li>
+                                <li><a href="<?php echo base_url(); ?>/contact-us">Contact</a></li>
+
+                                 <li><a href="<?php echo base_url(); ?>/blog/1">Blog</a></li>
+
+                                
 
 
                             </ul>

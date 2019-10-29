@@ -109,4 +109,19 @@ class Home extends CI_Controller
         $this->load->view('front/seeker/job/search/search_result');
         $this->load->view('front/lib/footer');
     }
+
+
+    /*
+    !----------------------------------------
+    ! Search Page
+    !----------------------------------------
+    */
+    public function contact_us()
+    {
+        $this->load->view('front/lib/header');
+        $this->load->view('front/page/contact_us');
+        $this->load->view('front/lib/footer');
+
+    }
+
 }

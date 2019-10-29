@@ -2,16 +2,29 @@
 if ($this->session->success) { ?>
     <?php echo $this->session->success; ?>
 <?php   }?>
-<!-- Categories -->
 
 
 
+<div class="container" style="margin-top: 80px;">
+
+
+
+<!-- Job Spotlight -->
+<div class="five columns">
+    <h3 class="margin-bottom-5">Blogs</h3>
+
+    <!-- Navigation -->
+    <div class="showbiz-navigation">
+        <div id="showbiz_left_1" class="sb-navigation-left"><i class="fa fa-angle-left"></i></div>
+        <div id="showbiz_right_1" class="sb-navigation-right"><i class="fa fa-angle-right"></i></div>
+    </div>
+ 
+    </div>
+</div>
 
 <!-- Recent Posts -->
-<div class="container" style="margin-top: 50px">
-    <div class="sixteen columns">
-        <h3 class="margin-bottom-25">Recent Posts</h3>
-    </div>
+<div class="container">
+    
     <?php foreach ($blogs as $blog) { ?>
 
 

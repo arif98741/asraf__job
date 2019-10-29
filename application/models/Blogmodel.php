@@ -8,6 +8,13 @@ class Blogmodel extends  CI_Model{
 		$this->db = $this->load->database("default",TRUE);
 	}
 
+	public function blogs($blog_id =1)
+	{
+		$this->db->join('tbl_blog_category','tbl_blog_category.tbcid = tbl_blog.tbcid');
+        $this->db->order_by('tbl_blog.blog_id','desc');
+        return $this->db->get('tbl_blog')->result_object();
+	}
+
 	public function single_blog($blog_id)
 	{
 		$this->db->join('tbl_blog_category','tbl_blog_category.tbcid = tbl_blog.tbcid');
@@ -15,6 +22,8 @@ class Blogmodel extends  CI_Model{
         $this->db->order_by('tbl_blog.blog_id','desc');
         return $this->db->get('tbl_blog')->row();
 	}
+
+	
 
 	public function recent_blog($limit=3)
 	{
