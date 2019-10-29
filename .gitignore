@@ -7,3 +7,4 @@ works/*
 *.iml
 system/cache/*
 uploads
+vendor

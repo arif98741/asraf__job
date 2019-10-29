@@ -15,6 +15,7 @@ class ComposerStaticInit90071c1594c7884d778cb27ce18bd232
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'I' => 
         array (
@@ -30,6 +31,10 @@ class ComposerStaticInit90071c1594c7884d778cb27ce18bd232
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Intervention\\Image\\' => 
         array (

@@ -67,6 +67,8 @@ $route['search/(:num)/(:any)']	= 'home/search_page/$1/$2';
 $route['blogs']					= 'blog/index';
 $route['blog/(:num)']			= 'blog/view/$1';
 $route['contact-us']			= 'home/contact_us';
+$route['company/forgot_password']= 'company/company/forgot_password';
+
 
 
 $route['404_override'] 		   = 'error404'; //override by controller

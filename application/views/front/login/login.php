@@ -11,7 +11,7 @@
             <?php echo form_open('login/login',array('class'=> 'login')) ?>
 
 
-            <select style="font-size:20px;       height: 50px;" name="position">
+            <select style="font-size:20px;  height: 50px;" id="login_dropdown" name="position">
                 <option>--Select position--</option>
                 <option value="company">Company Providers</option>
                 <option value="seeker">Job Seekers</option>
@@ -41,11 +41,9 @@
                     <input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me
                 </label> -->
             </p>
-
             <p class="lost_password">
-                <a href="fpass.php">Lost Your Password?</a>
+                <a href="#" id="password_link">Lost Your Password?</a>
             </p>
-
         </form>
     </div>
 </div>
@@ -56,5 +54,14 @@
         setTimeout(function(){
             $('#message').slideUp(800);
          },4000);
+
+        $('#login_dropdown').change(function(event) {
+            var value = $(this).val();
+
+            if (value) {
+                $('#password_link').attr('href','<?php echo base_url(); ?>'+value+'/forgot_password')
+            }
+
+        });
     });
 </script>

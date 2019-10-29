@@ -137,11 +137,6 @@ class Job extends CI_Controller
         redirect(base_url());
     }
 
-
-    
-
-
-
      /*
     !--------------------------------------------------------
     !     Delete Job

@@ -180,6 +180,7 @@
                     $('.message').slideUp(800);
                  },5000);
             });
+            
         </script>
     </body>
     </html> 

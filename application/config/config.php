@@ -115,4 +115,8 @@ $path =  pathinfo(__DIR__);
 require $path['dirname'].'../../vendor/autoload.php';
 define('JOB_PER_PAGE', 10);
 
+$path =  pathinfo(__DIR__);
+require $path['dirname'].'../../vendor/autoload.php';
+
+
 
