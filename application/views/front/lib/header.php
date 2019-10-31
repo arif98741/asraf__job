@@ -103,12 +103,13 @@
 
                                 <li>
                                     <div class="div" style="display: inline-block;">
-                                        <input type="text" style="max-width: 120px; height: 40px;  border-radius: 10px;" placeholder="Enter search keyword"> <!-- button style="display: block;" ><i class="fa fa-search"></i></button> -->
+                                        <form action="<?php echo base_url(); ?>search/search_action">
+                                            <input type="text" name="search" style="max-width: 120px; height: 40px;  border-radius: 10px;" placeholder="Enter search keyword"> <button style="display: none;" type="submit"><i class="fa fa-search"></i></button>
+                                        </form>
                                     </div>
                                 </li>
 
                             </ul>
-
 
                             <ul class="float-right">
 

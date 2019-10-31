@@ -110,6 +110,19 @@ class Home extends CI_Controller
         $this->load->view('front/lib/footer');
     }
 
+    /*
+    !----------------------------------------
+    ! Search Page
+    !----------------------------------------
+    */
+    public function search_action1()
+    {
+        $search = $this->input->get('search');
+        redirect(base_url().'search/1/'.$search,'refresh');
+    }
+
+
+
 
     /*
     !----------------------------------------
