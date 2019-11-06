@@ -47,7 +47,7 @@
                             <ul id="responsive">
 
                                 <li>
-                                    <a href="<?php echo base_url(); ?>" id="current">Home</a>
+                                    <a href="<?php echo base_url(); ?>" id="current">হোম</a>
                                     
                                 </li>
 
@@ -60,20 +60,20 @@
                                 </li> -->
 
                                 <li>
-                                    <a href="#">For Candidates</a>
+                                    <a href="#">চাকুরী আগ্রহী</a>
                                     <ul>
                                        <?php if($this->session->seeker): ?>
 
-                                        <li><a href="add-resume.php">Add Resume</a></li>
+                                        <li><a href="add-resume.php"> রিসিউম যুক্ত করুন </a></li>
 
 
-                                        <li><a href="job-alerts.php">Job Alert</a></li>
+                                        <li><a href="job-alerts.php">চাকুরি নোটীফিকেশন</a></li>
                                     <?php endif; ?>
 
-                                    <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">Browse Jobs</a></li>
-                                    <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">Browse Categories</a></li>
+                                    <li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs">চাকুরী</a></li>
+                                    <li><a href="<?php echo base_url(); ?>seeker/job/manage_categories">ক্যাটাগরি</a></li>
                                     <!--  <li><a href="manage-resumes.php">Manage Resumes</a></li> -->
-                                    <li><a href="<?php echo base_url(); ?>browse_resumes/1">Browse Resumes</a></li>
+                                    <li><a href="<?php echo base_url(); ?>browse_resumes/1">রিসিউম ব্রাউজ করুন</a></li>
 
 
                                 </ul>
@@ -81,34 +81,30 @@
 
 
                             <li>
-                                <a href="#">Job Providers</a>
+                                <a href="#">চাকুরিদাতা</a>
                                 <ul>
                                     <?php if($this->session->company): ?>
 
-                                        <li><a href="<?php echo base_url(); ?>company/job/add_job">Add Job</a></li>
-                                        <li><a href="<?php echo base_url(); ?>company/job/manage_jobs">Manage Jobs</a></li>
-                                        <li><a href="<?php echo base_url(); ?>company/application/manage_all_applications">Manage Applications</a></li>
+                                        <li><a href="<?php echo base_url(); ?>company/job/add_job">চাকুরি যুক্ত করুন</a></li>
+                                        <li><a href="<?php echo base_url(); ?>company/job/manage_jobs">সম্পাদনা</a></li>
+                                        <li><a href="<?php echo base_url(); ?>company/application/manage_all_applications">আবেদন সম্পাদনা</a></li>
 
                                         <?php else: ?>
 
-                                            <li><a href="<?php echo base_url(); ?>provider_registration">Register</a></li>
+                                            <li><a href="<?php echo base_url(); ?>provider_registration">রেজিট্রেশন</a></li>
                                         <?php endif;?>
 
                                         
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo base_url(); ?>/contact-us">Contact</a></li>
+                                <li><a href="<?php echo base_url(); ?>/contact-us">যোগাযোগ</a></li>
 
-                                <li><a href="<?php echo base_url(); ?>/blogs">Blog</a></li>
-
-                                <li><a href="<?php echo base_url(); ?>/bn" class="active">বাংলা</a></li>
-
-                                
+                                <li><a href="<?php echo base_url(); ?>/blogs">ব্লগ</a></li>
 
                                 <li>
                                     <div class="div" style="display: inline-block;">
                                         <form action="<?php echo base_url(); ?>search/search_action">
-                                            <input type="text" name="search" style="max-width: 120px; height: 40px;  border-radius: 10px;" placeholder="Enter search keyword"> <button style="display: none;" type="submit"><i class="fa fa-search"></i></button>
+                                            <input type="text" name="search" style="max-width: 120px; height: 40px;  border-radius: 10px;" placeholder="সার্চ এখানে"> <button style="display: none;" type="submit"><i class="fa fa-search"></i></button>
                                         </form>
                                     </div>
                                 </li>
@@ -128,8 +124,8 @@
                              <?php endif; ?>
 
                              <?php if(!$this->session->seeker && !$this->session->company): ?>
-                                <li><a href="<?php echo base_url(); ?>signup"><i class="fa fa-user"></i> Sign Up</a></li>
-                                <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-lock"></i> Log in</a></li>
+                                <li><a href="<?php echo base_url(); ?>signup"><i class="fa fa-user"></i> সাইন আপ</a></li>
+                                <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-lock"></i> লগ ইন</a></li>
                             <?php endif; ?>
 
 
@@ -161,7 +157,7 @@
                     <nav id="navigation" class="menu sf-js-enabled sf-arrows">
                         <ul id="responsive">
 
-                            <li><a href="index.html" class="sf-with-ul">Home</a>
+                            <li><a href="index.html" class="sf-with-ul">হোম</a>
                                 <ul style="display: none;">
                                     <li><a href="index.html">Home #1</a></li>
                                     <li><a href="index-2.html">Home #2</a></li>

@@ -43,6 +43,34 @@ class Home extends CI_Controller
         $this->load->view('front/lib/footer');
     }
 
+     /*
+    !----------------------------------------
+    ! Home page website Bengali
+    !----------------------------------------
+    */
+    public function index_bn()
+    {
+        $this->db->select('tbl_job.*,tbl_company.company_name');
+        $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
+        $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
+        $this->db->order_by('tbl_job.job_id','desc');
+        $this->db->limit(4);
+        $data['front_jobs'] = $this->db->get('tbl_job')->result_object();
+
+        $data['jobcats'] = $this->db->order_by('jobcat_id','desc')->limit(8)->get('tbl_job_category')->result_object();
+
+
+        $this->db->join('tbl_blog_category','tbl_blog_category.tbcid = tbl_blog.tbcid');
+        $data['blogs'] = $this->db->order_by('tbl_blog.blog_id','desc')->limit(8)->order_by('tbl_blog.blog_id','desc')->limit(3)->get('tbl_blog')->result_object();
+
+        $this->load->view('front/lib/header_bn',$data);
+        $this->load->view('front/lib/banner_bn');
+        $this->load->view('front/home_bn');
+        $this->load->view('front/lib/footer_bn');
+    }
+
+    
+
 
 
     /*
