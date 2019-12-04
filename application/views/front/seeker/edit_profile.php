@@ -2,13 +2,9 @@
 	
 	<!-- Submit Page -->
 	<div class="eight columns" style="margin-top: 50px;">
+		<h1>Edit Profile</h1>
 		<div class="submit-page">
 
-			<!-- Linked In -->
-			<div class="form">
-				<h5>Edit Profile</h5>
-				<a href="#" class="button linkedin-btn">Import from LinkedIn</a>
-			</div>
 
 			<!-- Email -->
 			<div class="form">
@@ -40,16 +36,10 @@
 				<input class="search-field" type="text" name="address"  value="<?php echo $seeker->address; ?>">
 			</div>
 
-
-
 			<div class="form">
 				<h5>Website</h5>
 				<input class="search-field" type="text" name="website"  value="<?php echo $seeker->website; ?>">
 			</div>
-
-			
-
-			
 
 			<!-- Logo -->
 			<div class="form">
@@ -73,23 +63,6 @@
 				<textarea class="WYSIWYG" name="summary" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
 			</div>
 
-
-			<!-- Add URLs -->
-			<div class="form with-line">
-				<h5>URL(s) <span>(optional)</span></h5>
-				<div class="form-inside">
-					
-					<!-- Adding URL(s) -->
-					<div class="form boxed box-to-clone url-box" style="display: none;">
-						<a href="#" class="close-form remove-box button"><i class="fa fa-close"></i></a>
-						<input class="search-field" type="text" placeholder="Name" value="">
-						<input class="search-field" type="text" placeholder="http://" value="">
-					</div>
-
-					<a href="#" class="button gray add-url add-box"><i class="fa fa-plus-circle"></i> Add URL</a>
-					<p class="note">Optionally provide links to any of your websites or social network profiles.</p>
-				</div>
-			</div>
 
 
 			<!-- Education -->

@@ -75,6 +75,18 @@
                 <span class="focus-input100-2"></span>
             </div>
 
+              <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="voter_id" placeholder="Voter ID" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
+
+             <div class="wrap-input100" data-validate="">
+                <input class="input100" type="text" name="trade_license" placeholder="Trade License" required="">
+                <span class="focus-input100-1"></span>
+                <span class="focus-input100-2"></span>
+            </div>
+
             <div class="wrap-input100 rs1" data-validate="Password is required">
                 <input class="input100" type="password" name="password" placeholder="Password" required="">
                 <span class="focus-input100-1"></span>

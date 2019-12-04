@@ -52,6 +52,10 @@ class Seeker extends CI_Controller
             $this->db->insert('seeker',array(
                 'name'          => $this->input->post('name'),
                 'email'         => $this->input->post('email'),
+                'voter_id'         => $this->input->post('voter_id'),
+                'birthdate'         => $this->input->post('birthdate'),
+                'gender'         => $this->input->post('gender'),
+                'email'         => $this->input->post('email'),
                 'password'      => md5($this->input->post('password')),
                 'address'       => $this->input->post('address'),
             ));

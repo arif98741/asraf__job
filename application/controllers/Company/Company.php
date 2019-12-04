@@ -50,6 +50,8 @@ class Company extends CI_Controller
                 'email' => $this->input->post('email'),
                 'full_name' => $this->input->post('full_name'),
                 'location' => $this->input->post('location'),
+                'voter_id' => $this->input->post('voter_id'),
+                'trade_license' => $this->input->post('trade_license'),
                 'password' => md5($this->input->post('password'))
             ));
             $insert_id = $this->db->insert_id();

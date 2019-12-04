@@ -21,13 +21,38 @@
 
             <p class="form-row form-row-wide">
                 <label for="username">
+                    Voter ID:
+                    <i class=""></i>
+                    <input type="text" class="input-text" name="voter_id"  >
+                </label>
+            </p>
+
+            <p class="form-row form-row-wide">
+                <label for="username">
+                   Birthdate:
+                    <i class=""></i>
+                    <input type="date" class="input-text" name="birthdate"  >
+                </label>
+            </p>
+
+            <p class="form-row form-row-wide">
+                <label for="username">
+                    Gender:
+                    <i class=""></i>
+                   <select name="gender" id="" class="input-text">
+                       <option value="Male">Male</option>
+                       <option value="Female">Female</option>
+                   </select>
+                </label>
+            </p>
+
+            <p class="form-row form-row-wide">
+                <label for="username">
                     Email:
                     <i class="ln ln-icon-Email"></i>
                     <input type="email" class="input-text" name="email"  >
                 </label>
             </p>
-
-            
 
             <p class="form-row form-row-wide">
                 <label for="password">

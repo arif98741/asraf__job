@@ -12,8 +12,6 @@
 					<?php endif; ?>
 
 
-
-
 					<div class="resumes-list-content">
 						<h4><?php echo $seeker->name; ?> <span><?php echo $seeker->tagline; ?></span></h4>
 						<span class="icons"><i class="fa fa-map-marker"></i> <?php echo $seeker->address; ?></span>
@@ -81,58 +79,62 @@
 					<?php if($this->session->seeker): ?>
 						<a href="<?php echo base_url(); ?>seeker/seeker/edit_profile" class=" dark"><i class="fa fa-cog"></i> Edit Profile</a>
 
-						<?php endif; ?>
+					<?php endif; ?>
 
-						<a href="#" class="button dark"><i class="fa fa-star"></i> Bookmark This Resume</a>
-
-
-
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="container">
-			<!-- Recent Jobs -->
-			<div class="eight columns">
-				<div class="padding-right">
-
-					<h3 class="margin-bottom-15">About Me</h3>
-
-					<p class="margin-reset">
-						<?php echo $seeker->about_me; ?>
-					</p>
-
+					<a href="#" class="button dark"><i class="fa fa-star"></i> Bookmark This Resume</a>
 
 
 				</div>
 			</div>
 
+		</div>
+	</div>
 
-			<!-- Widgets -->
-			<div class="eight columns">
+	<div class="container">
+		<!-- Recent Jobs -->
+		<div class="eight columns">
+			<div class="padding-right">
 
-				<h3 class="margin-bottom-20">Education</h3>
+				<h3 class="margin-bottom-15">About Me</h3>
 
-				<!-- Resume Table -->
-				<dl class="resume-table">
-					<?php foreach ($educations as $education) { ?>
-						<dt>
-							<small class="date"><?php echo $education->grade_year; ?></small>
-							<strong><?php echo $education->grade; ?></strong>
-						</dt>
-						<dd>
-							<?php echo $education->grade_description; ?>
-						</dd>
+				<p class="margin-reset">
+					About Me: <?php echo $seeker->about_me; ?>
+				</p>
 
-					<?php } ?>
-
-
-
-				</dl>
+				<p class="margin-reset">
+					Gender: <?php echo $seeker->gender; ?>
+				</p>
 
 			</div>
+		</div>
+
+
+		<!-- Widgets -->
+		<div class="eight columns">
+
+			<h3 class="margin-bottom-20">Education</h3>
+
+			<!-- Resume Table -->
+			<dl class="resume-table">
+				<?php foreach ($educations as $education) { ?>
+					<dt>
+						<small class="date"><?php echo $education->grade_year; ?></small>
+						<strong><?php echo $education->grade; ?></strong>
+					</dt>
+					<dd>
+						<?php echo $education->grade_description; ?>
+					</dd>
+
+				<?php } ?>
+
+			</dl>
 
 		</div>
+
+		<div class="six columns">
+			<h3>Address: <?php echo $seeker->address; ?></h3>
+			<h3>National id: <?php echo $seeker->voter_id; ?></h3>
+
+
+		</div>
+	</div>
