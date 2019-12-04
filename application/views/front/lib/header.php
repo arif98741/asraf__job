@@ -104,7 +104,11 @@
                             <ul class="float-right">
 
                                 <?php if($this->session->company): ?>
+                                    <li><a href="<?php echo base_url(); ?>company/company/profile"><i class="fa fa-user"></i> Profile</a></li>
+
                                     <li><a href="<?php echo base_url(); ?>company/logout"><i class="fa fa-lock"></i>(<?php echo $this->session->company_author; ?>) Log out</a></li>
+
+                                    
                                 <?php endif; ?>
 
                                 <?php if($this->session->seeker): ?>
@@ -117,8 +121,6 @@
                                 <li><a href="<?php echo base_url(); ?>seeker/registration"><i class="fa fa-user"></i> Sign Up</a></li>
                                 <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-lock"></i> Log in</a></li>
                             <?php endif; ?>
-
-
 
 
                         </ul>

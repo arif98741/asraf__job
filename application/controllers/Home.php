@@ -24,7 +24,7 @@ class Home extends CI_Controller
     */
     public function index()
     {
-        $this->db->select('tbl_job.*,tbl_company.company_name');
+        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.logo');
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
         $this->db->order_by('tbl_job.job_id','desc');
@@ -42,7 +42,6 @@ class Home extends CI_Controller
         $this->load->view('front/home');
         $this->load->view('front/lib/footer');
     }
-
 
 
     /*
@@ -97,7 +96,7 @@ class Home extends CI_Controller
         $data['page_id']  = $page_id;
         $data['keyword']  = $keyword;
 
-        $this->db->select('tbl_job.*,tbl_company.company_name');
+        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.logo');
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
         $this->db->like('tbl_job.job_title',$keyword);

@@ -32,7 +32,16 @@
 						
 
 						<li><a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>">
-							<img src="<?php echo base_url(); ?>asset/front/company_images/27096.jpg" alt="">
+							<?php if(!empty($job->logo)): ?>
+                                <img src="<?php echo base_url(); ?>/uploads/company/logo/<?php echo $job->logo; ?>" alt="">
+
+
+                                <?php else: ?>
+                                    
+                                    <img src="<?php echo base_url(); ?>/uploads/company/logo/default.png" alt="">
+
+                                    
+                                <?php endif; ?>
 							<div class="job-list-content">
 								<h4><?php echo $job->job_title; ?> 
 

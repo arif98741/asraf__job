@@ -13,26 +13,43 @@
 			<!-- Email -->
 			<div class="form">
 				<h5>Your Name</h5>
-				<input class="search-field" type="text" placeholder="Your full name" value="">
+				<input class="search-field" type="text" name="name" placeholder="Your full name" value="<?php echo $seeker->name; ?>">
 			</div>
 
-			<!-- Email -->
 			<div class="form">
-				<h5>Your Email</h5>
-				<input class="search-field" type="text" placeholder="mail@example.com" value="">
+				<h5>Tagline</h5>
+				<input class="search-field" type="text" name="tagline"  value="<?php echo $seeker->tagline; ?>">
 			</div>
 
-			<!-- Title -->
+
+
 			<div class="form">
-				<h5>Professional Title</h5>
-				<input class="search-field" type="text" placeholder="e.g. Web Developer" value="">
+				<h5>Email</h5>
+				<input class="search-field" type="text" name="email"  value="<?php echo $seeker->email; ?>">
 			</div>
 
-			<!-- Location -->
+
+
 			<div class="form">
-				<h5>Location</h5>
-				<input class="search-field" type="text" placeholder="e.g. London, UK" value="">
+				<h5>Contact</h5>
+				<input class="search-field" type="text" name="mobile"  value="<?php echo $seeker->mobile; ?>">
 			</div>
+
+			<div class="form">
+				<h5>Address</h5>
+				<input class="search-field" type="text" name="address"  value="<?php echo $seeker->address; ?>">
+			</div>
+
+
+
+			<div class="form">
+				<h5>Website</h5>
+				<input class="search-field" type="text" name="website"  value="<?php echo $seeker->website; ?>">
+			</div>
+
+			
+
+			
 
 			<!-- Logo -->
 			<div class="form">

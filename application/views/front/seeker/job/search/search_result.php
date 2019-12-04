@@ -32,65 +32,74 @@
 
 
 					<li><a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>">
-						<img src="<?php echo base_url(); ?>asset/front/company_images/27096.jpg" alt="">
-						<div class="job-list-content">
-							<h4><?php echo $job->job_title; ?> 
-
-							<?php if($job->job_type  == 'Full-Time'){?>
-								<span class="part-time">Full-Time</span>
-
-							<?php }elseif($job->job_type  == 'Part-Time'){?>
-								<span class="full-time">Full-Time</span>
-
-							<?php }elseif($job->job_type  == 'Internship'){?>
-								<span class="internship">Internship</span>
+						<?php if(!empty($job->logo)): ?>
+							<img src="<?php echo base_url(); ?>/uploads/company/logo/<?php echo $job->logo; ?>" alt="">
 
 
-							<?php }?>
+							<?php else: ?>
 
-						</h4>
-						<div class="job-icons">
-							<span><i class="fa fa-briefcase"></i> <?php echo $job->company_name;?></span>
-							<span><i class="fa fa-map-marker"></i> <?php echo $job->location;?></span>
-							<span><i class="fa fa-money"></i> <?php //echo $job->rate; ?> / hour</span>
+								<img src="<?php echo base_url(); ?>/uploads/company/logo/default.png" alt="">
+
+
+							<?php endif; ?>
+							<div class="job-list-content">
+								<h4><?php echo $job->job_title; ?> 
+
+								<?php if($job->job_type  == 'Full-Time'){?>
+									<span class="part-time">Full-Time</span>
+
+								<?php }elseif($job->job_type  == 'Part-Time'){?>
+									<span class="full-time">Full-Time</span>
+
+								<?php }elseif($job->job_type  == 'Internship'){?>
+									<span class="internship">Internship</span>
+
+
+								<?php }?>
+
+							</h4>
+							<div class="job-icons">
+								<span><i class="fa fa-briefcase"></i> <?php echo $job->company_name;?></span>
+								<span><i class="fa fa-map-marker"></i> <?php echo $job->location;?></span>
+								<span><i class="fa fa-money"></i> <?php //echo $job->rate; ?> / hour</span>
+							</div>
+							<p>The SEO/SEM Specialist will work with industry leaders and top retailers to define and deliver best practices through innovative SEO methodologies.</p>
 						</div>
-						<p>The SEO/SEM Specialist will work with industry leaders and top retailers to define and deliver best practices through innovative SEO methodologies.</p>
-					</div>
-				</a>
-				<div class="clearfix"></div>
-			</li>
+					</a>
+					<div class="clearfix"></div>
+				</li>
 
-		<?php } ?>
+			<?php } ?>
 
 
 
-	</ul>
-	<div class="clearfix"></div>
+		</ul>
+		<div class="clearfix"></div>
 
-	<div class="pagination-container">
-		<nav class="pagination">
-			<ul>
-				<?php for($i=1; $i<=$total_no_of_pages; $i++){ ?>
-					<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $i; ?>" <?php if($i == $page_id): ?> class="current-page" <?php endif; ?>><?php echo $i; ?></a></li>
-				<?php }?>
-			</ul>
-		</nav>
+		<div class="pagination-container">
+			<nav class="pagination">
+				<ul>
+					<?php for($i=1; $i<=$total_no_of_pages; $i++){ ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $i; ?>" <?php if($i == $page_id): ?> class="current-page" <?php endif; ?>><?php echo $i; ?></a></li>
+					<?php }?>
+				</ul>
+			</nav>
 
-		<nav class="pagination-next-prev">
-			<ul>
-				<?php if($page_id != 1): ?>
-					<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $previous_page; ?>" class="prev">Previous</a></li>
-				<?php endif; ?>
+			<nav class="pagination-next-prev">
+				<ul>
+					<?php if($page_id != 1): ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $previous_page; ?>" class="prev">Previous</a></li>
+					<?php endif; ?>
 
-				<?php if($page_id !== $total_no_of_pages): ?>
-					<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $next_page; ?>" class="next">Next</a></li>
+					<?php if($page_id !== $total_no_of_pages): ?>
+						<li><a href="<?php echo base_url(); ?>seeker/job/browse_jobs/<?php echo $next_page; ?>" class="next">Next</a></li>
 
-				<?php endif; ?>
-			</ul>
-		</nav>
+					<?php endif; ?>
+				</ul>
+			</nav>
+		</div>
+
 	</div>
-
-</div>
 </div>
 
 

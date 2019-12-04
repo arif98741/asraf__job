@@ -63,114 +63,125 @@
 
 			<!-- Company Info -->
 			<div class="company-info">
-				<img src="<?php echo base_url(); ?>asset/front/company_images/27096.jpg" alt="<?php echo $job->company_name;?>">
-				<div class="content">
-					<h4><?php echo $job->company_name;?></h4>
-					<span><a href="<?php echo $job->company_website;?>"><i class="fa fa-link"></i>&nbsp;<?php echo $job->company_website;?></a></span>
-					<!-- 	<span><a href="<?php //echo $job['company_twitter'];?>"><i class="fa fa-twitter"></i>&nbsp;<?php //echo $job['company_twitter'];?></a></span> -->
+				<?php if(!empty($job->logo)): ?>
+					<img src="<?php echo base_url(); ?>/uploads/company/logo/<?php echo $job->logo; ?>" alt="">
+
+
+					<?php else: ?>
+
+						<img src="<?php echo base_url(); ?>/uploads/company/logo/default.png" alt="">
+
+
+					<?php endif; ?>
+					<div class="content">
+						<h4><?php echo $job->company_name;?></h4>
+						<span><a href="<?php echo $job->company_website;?>"><i class="fa fa-link"></i>&nbsp;<?php echo $job->company_website;?></a></span>
+						<!-- 	<span><a href="<?php //echo $job['company_twitter'];?>"><i class="fa fa-twitter"></i>&nbsp;<?php //echo $job['company_twitter'];?></a></span> -->
+					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
+
+				<p class="margin-reset"><?php echo $job->job_description;?></p>
+
+				<br>
+
 			</div>
-
-			<p class="margin-reset"><?php echo $job->job_description;?></p>
-
-			<br>
-
 		</div>
-	</div>
 
 
-	<!-- Widgets -->
-	<div class="five columns">
+		<!-- Widgets -->
+		<div class="five columns">
 
-		<!-- Sort by -->
-		<div class="widget">
-			<h4>Overview</h4>
+			<!-- Sort by -->
+			<div class="widget">
+				<h4>Overview</h4>
 
-			<div class="job-overview">
+				<div class="job-overview">
 
-				<ul>
-					<li>
-						<i class="fa fa-map-marker"></i>
-						<div>
-							<strong>Location:</strong>
-							<span style="text-transform:uppercase;"><?php echo $job->location;?></span>
+					<ul>
+						<li>
+							<i class="fa fa-map-marker"></i>
+							<div>
+								<strong>Location:</strong>
+								<span style="text-transform:uppercase;"><?php echo $job->location;?></span>
+							</div>
+						</li>
+						<li>
+							<i class="fa fa-user"></i>
+							<div>
+								<strong>Job Title:</strong>
+								<span style="text-transform:uppercase;"><?php echo $job->job_title;?></span>
+							</div>
+						</li>
+						<li>
+							<i class="fa fa-clock-o"></i>
+							<div>
+								<strong>Posted On:</strong>
+								<span><?php echo date('d-m-Y',strtotime($job->posted_date));?></span>
+							</div>
+						</li>
+
+						<li>
+							<i class="fa fa-clock-o"></i>
+							<div>
+								<strong>Apply Last Date:</strong>
+								<span><?php echo date('d-m-Y',strtotime($job->deadline));?></span>
+							</div>
+						</li>
+
+						<li>
+							<i class="fa fa-money"></i>
+							<div>
+								<strong>Salary:</strong>
+								<span><?php echo $job->salary;?></span>
+							</div>
+						</li>
+					</ul>
+
+					<?php if (!$this->session->seeker) {  ?> 
+						<a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>" class="button">Apply For This Job</a>
+					<?php }else{?>
+
+						<a href="#small-dialog" class="popup-with-zoom-anim button">Apply For This Job</a>
+					<?php  }?>
+
+
+					<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
+						<div class="small-dialog-headline">
+							<h2>Apply For This Job</h2>
+							<p><?php 
+							if(isset($errMSG))
+							{
+								echo $errMSG;
+							}
+							?></p>
 						</div>
-					</li>
-					<li>
-						<i class="fa fa-user"></i>
-						<div>
-							<strong>Job Title:</strong>
-							<span style="text-transform:uppercase;"><?php echo $job->job_title;?></span>
-						</div>
-					</li>
-					<li>
-						<i class="fa fa-clock-o"></i>
-						<div>
-							<strong>Posted On:</strong>
-							<span><?php echo date('d-m-Y',strtotime($job->posted_date));?></span>
-						</div>
-					</li>
 
-					<li>
-						<i class="fa fa-clock-o"></i>
-						<div>
-							<strong>Apply Last Date:</strong>
-							<span><?php echo date('d-m-Y',strtotime($job->deadline));?></span>
-						</div>
-					</li>
+						<div class="small-dialog-content">
+							<?php echo form_open_multipart('seeker/application/save_application',array('class'=> 'login')) ?>
 
-					<li>
-						<i class="fa fa-money"></i>
-						<div>
-							<strong>Salary:</strong>
-							<span><?php echo $job->salary;?></span>
-						</div>
-					</li>
-				</ul>
+							<!-- Input Box -->
+							<input type="text" name="name" value="<?php echo $this->session->seeker_name; ?>" placeholder="Full Name" />
+							<!-- Input Box --> 
+							<input type="text" name="application_email" value="<?php echo $this->session->seeker_email; ?>" placeholder="Email Address" />
+							<!-- Input Box -->
+							<textarea type="text" name="apply_message" placeholder="Your message / cover letter sent to the employer"></textarea>
 
-				<?php if (!$this->session->seeker) {  ?> 
-					<a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $job->job_id; ?>" class="button">Apply For This Job</a>
-				<?php }else{?>
+							<!-- Upload CV -->
+							<div class="upload-info"><strong>Upload your CV (optional)</strong> <span>Max. file size: 5MB</span></div>
+							<div class="clearfix"></div>
 
-					<a href="#small-dialog" class="popup-with-zoom-anim button">Apply For This Job</a>
-				<?php  }?>
+							<!-- Input Box -->
+
+							<input type="file" name="cv">
 
 
-				<div id="small-dialog" class="zoom-anim-dialog mfp-hide apply-popup">
-					<div class="small-dialog-headline">
-						<h2>Apply For This Job</h2>
-						<p><?php 
-						if(isset($errMSG))
-						{
-							echo $errMSG;
-						}
-						?></p>
+							<div class="divider"></div>
+							<input type="hidden" name="job_id" value="<?php  echo $job->job_id; ?>">
+							<button type="submit" class="send" name="submit">Send Application</button>
+						</form>
 					</div>
 
-					<div class="small-dialog-content">
-						<?php echo form_open_multipart('seeker/application/save_application',array('class'=> 'login')) ?>
-
-						<!-- Input Box -->
-						<input type="text" name="name" value="<?php echo $this->session->seeker_name; ?>" placeholder="Full Name" />
-						<!-- Input Box --> 
-						<input type="text" name="application_email" value="<?php echo $this->session->seeker_email; ?>" placeholder="Email Address" />
-						<!-- Input Box -->
-						<textarea type="text" name="apply_message" placeholder="Your message / cover letter sent to the employer"></textarea>
-
-						<!-- Upload CV -->
-						<div class="upload-info"><strong>Upload your CV (optional)</strong> <span>Max. file size: 5MB</span></div>
-						<div class="clearfix"></div>
-
-						<!-- Input Box -->
-
-						<input type="file" name="cv">
-
-
-						<div class="divider"></div>
-						<input type="hidden" name="job_id" value="<?php  echo $job->job_id; ?>">
-						<button type="submit" class="send" name="submit">Send Application</button>
-					</form>
 				</div>
 
 			</div>
@@ -178,9 +189,7 @@
 		</div>
 
 	</div>
-
-</div>
-<!-- Widgets / End -->
+	<!-- Widgets / End -->
 
 
 </div>

@@ -35,7 +35,7 @@ class Job extends CI_Controller
         $data['total_no_of_pages']  = ceil($row / $perpage);
         $data['page_id']  = $page_id;
 
-        $this->db->select('tbl_job.*,tbl_company.company_name');
+        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.logo');
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
         $this->db->order_by('tbl_job.job_id','desc');
@@ -56,7 +56,7 @@ class Job extends CI_Controller
     */
     public function job_page($job_id)
     {
-        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.company_website,tbl_job_category.jobcat_name');
+        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.company_website,tbl_job_category.jobcat_name,tbl_company.logo');
         $this->db->where('job_id',$job_id);
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
@@ -104,7 +104,7 @@ class Job extends CI_Controller
         $data['page_id']  = $page_id;
         $data['jobcat_id']  = $jobcat_id;
 
-        $this->db->select('tbl_job.*,tbl_company.company_name');
+        $this->db->select('tbl_job.*,tbl_company.company_name,tbl_company.logo');
         $this->db->join('tbl_company','tbl_company.company_id = tbl_job.company_id');
         $this->db->join('tbl_job_category','tbl_job_category.jobcat_id = tbl_job.jobcat_id');
         $this->db->where('tbl_job_category.jobcat_id',$jobcat_id);

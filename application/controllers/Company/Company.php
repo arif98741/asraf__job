@@ -61,7 +61,27 @@ class Company extends CI_Controller
                     'company_author'   => $this->input->post('full_name'),
                     'company_email'  =>$this->input->post('email'),
             );
-           $this->session->set_userdata($session);
+
+            $this->session->set_userdata($session);
+            
+            if (!empty($_FILES['logo']['name'])) {
+
+                $config['upload_path'] = './uploads/company/logo/';
+                $config['allowed_types'] = 'jpg|JPG|JPEG|PNG|png';
+                $config['max_size']     = 10000;
+                $config['max_width']    = 10000;
+                $config['max_height']   = 10000;
+                $config['file_name']    = "logo_".rand(1111111,9999999);
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('logo')) {
+                    $upload_data    = array('upload_data' => $this->upload->data());
+                    $data['logo']  = $upload_data['upload_data']['file_name'];
+                    $this->db->set(['logo'=>$data['logo']]);
+                    $this->db->where('company_id',$this->session->company_id)->update('tbl_company');
+                }
+            }
+
             $this->session->set_flashdata('success', 'Registered successfully');
             redirect(base_url());
         }
@@ -83,6 +103,84 @@ class Company extends CI_Controller
     }
 
 
+     /*
+    !--------------------------------------------------------
+    !      Job Profile
+    !--------------------------------------------------------
+    */
+    public function profile()
+    {
+        $data['company'] = $this->db->where('company_id',$this->session->company_id)->get('tbl_company')->row();
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/company/profile');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+     /*
+    !--------------------------------------------------------
+    !     Edit Profile
+    !--------------------------------------------------------
+    */
+    public function edit_profile()
+    {
+        $data['company'] = $this->db->where('company_id',$this->session->company_id)->get('tbl_company')->row();
+        
+        $this->load->view('front/lib/header',$data);
+        $this->load->view('front/company/edit_profile');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+    /*
+    !--------------------------------------------------------
+    !    Update PRofile
+    !--------------------------------------------------------
+    */
+    public function update_profile()
+    {
+
+        $data['company_name'] = $this->input->post('company_name');
+        $data['location'] = $this->input->post('location');
+        $data['email']  = $this->input->post('email');
+        $data['founded_on']  = $this->input->post('founded_on');
+        $data['trade_license']  = $this->input->post('trade_license');
+        $data['voter_id']  = $this->input->post('voter_id');
+        $data['total_employee']  = $this->input->post('total_employee');
+        $data['company_email']  = $this->input->post('company_email');
+        $data['company_contact']  = $this->input->post('company_contact');
+
+        if (!empty($_FILES['logo']['name'])) {
+
+            $config['upload_path'] = './uploads/company/logo/';
+            $config['allowed_types'] = 'jpg|JPG|JPEG|PNG|png';
+            $config['max_size']     = 10000;
+            $config['max_width']    = 10000;
+            $config['max_height']   = 10000;
+            $config['file_name']    = "logo_".rand(1111111,9999999);
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('logo')) {
+                $upload_data    = array('upload_data' => $this->upload->data());
+                $data['logo']  = $upload_data['upload_data']['file_name'];
+                $this->db->set(['logo'=>$data['logo']]);
+                $this->db->where('company_id',$this->session->company_id)->update('tbl_company');
+            }
+        }
+
+        $this->db->set($data);
+        $this->db->where('company_id',$this->session->company_id);
+        $this->db->update('tbl_company');
+        $this->session->set_flashdata('success', 'Company Updated successfully');
+        redirect(base_url());
+        
+    }
+
+    
+
+
+
+    
 
     /*
     !--------------------------------------------------------

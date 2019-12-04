@@ -35,7 +35,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-             <?php echo form_open('company/company/save_company',array('class'=> 'login100-form validate-form')) ?>
+             <?php echo form_open_multipart('company/company/save_company',array('class'=> 'login100-form validate-form')) ?>
 
              <span class="login100-form-title p-b-33">
                  Job Provider Registration
@@ -85,7 +85,16 @@
                 <input class="input100" type="password" name="password_confirm" placeholder="Confirm Password" required="">
                 <span class="focus-input100-1" ></span>
                 <span class="focus-input100-2"></span>
+            </div> <br>
+
+            <div class="wrap-input100 rs1">
+                <label for="">Logo</label>
+                <input class="input100" type="file" name="logo" placeholder="Logo" required="">
+                <span class="focus-input100-1" ></span>
+                <span class="focus-input100-2"></span>
             </div>
+
+            
 
             <div class="container-login100-form-btn m-t-20">
                 <button type="submit" class="login100-form-btn" name="SUBMIT">

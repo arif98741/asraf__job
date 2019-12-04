@@ -119,18 +119,7 @@
 
 			</div>
 
-			<!-- Logo -->
-			<div class="form">
-				<h5>Logo <span>(optional)</span></h5>
-				<label class="upload-btn">
-
-					<input type="file" name="logo" accept="image/*" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-
-					<i class="fa fa-upload"></i> Browse
-				</label>
-				<span class="fake-input">No file selected</span>
-			</div>
-
+		
 			<div class="form">
 				<h5>File <span>(optional)</span></h5>
 				<label class="upload-btn">

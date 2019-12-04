@@ -1,6 +1,6 @@
 <?php 
 if ($this->session->success) { ?>
-    <?php echo $this->session->success; ?>
+    <p class="alert alert-success"><?php echo $this->session->success; ?></p>
 <?php   }?>
 <!-- Categories -->
 <div class="container">
@@ -36,96 +36,105 @@ if ($this->session->success) { ?>
                     <li class="highlighted">
                         <a href="<?php echo base_url(); ?>seeker/job/job_page/<?php echo $front_job->job_id; ?>" class="btn btn-info btn-xs view_data" >
 
-                            <img src="<?php echo base_url(); ?>asset/front/company_images/27096.jpg" alt="">
+                            <?php if(!empty($front_job->logo)): ?>
+                                <img src="<?php echo base_url(); ?>/uploads/company/logo/<?php echo $front_job->logo; ?>" alt="">
 
-                            <div class="job-list-content">
-                                <h4>  <?php echo $front_job->job_title ;?>                                          
-                                <?php  if($front_job->job_type =="Full-Time"){
-                                    ?>
-                                    <span style="background-color:#2980b9;" class="full-time"><?php echo $front_job->job_type ;?></span>
-                                    <?php
-                                }
-                                else if($front_job->job_type =="Internship")
-                                {
-                                    ?>
-                                    <span style="background-color:#f39c12;" class="full-time"><?php echo $front_job->job_type ;?></span>
-                                    <?php   
-                                }
-                                else if($front_job->job_type =="Part-Time")
-                                {
-                                    ?>
-                                    <span style="background-color:#d35400;" class="full-time"><?php echo $front_job->job_type ;?></span>
-                                    <?php
-                                }
-                                else if($front_job->job_type =="Freelance")
-                                {
-                                    ?>
-                                    <span style="background-color:#27ae60;" class="full-time"><?php echo $front_job->job_type ;?></span>
-                                    <?php
-                                } ?>
-                            </h4>
-                            <div class="job-icons">
-                                <span><i class="fa fa-briefcase"></i> <?php echo $front_job->company_name; ?></span>
-                                <span><i class="fa fa-map-marker"></i>  <?php echo $front_job->location; ?></span>
-                                <span><i class="fa fa-money"></i> ৳<?php echo $front_job->salary; ?></span>
+
+                                <?php else: ?>
+                                    
+                                    <img src="<?php echo base_url(); ?>/uploads/company/logo/default.png" alt="">
+
+                                    
+                                <?php endif; ?>
+
+                                <div class="job-list-content">
+                                    <h4>  <?php echo $front_job->job_title ;?>                                          
+                                    <?php  if($front_job->job_type =="Full-Time"){
+                                        ?>
+                                        <span style="background-color:#2980b9;" class="full-time"><?php echo $front_job->job_type ;?></span>
+                                        <?php
+                                    }
+                                    else if($front_job->job_type =="Internship")
+                                    {
+                                        ?>
+                                        <span style="background-color:#f39c12;" class="full-time"><?php echo $front_job->job_type ;?></span>
+                                        <?php   
+                                    }
+                                    else if($front_job->job_type =="Part-Time")
+                                    {
+                                        ?>
+                                        <span style="background-color:#d35400;" class="full-time"><?php echo $front_job->job_type ;?></span>
+                                        <?php
+                                    }
+                                    else if($front_job->job_type =="Freelance")
+                                    {
+                                        ?>
+                                        <span style="background-color:#27ae60;" class="full-time"><?php echo $front_job->job_type ;?></span>
+                                        <?php
+                                    } ?>
+                                </h4>
+                                <div class="job-icons">
+                                    <span><i class="fa fa-briefcase"></i> <?php echo $front_job->company_name; ?></span>
+                                    <span><i class="fa fa-map-marker"></i>  <?php echo $front_job->location; ?></span>
+                                    <span><i class="fa fa-money"></i> ৳<?php echo $front_job->salary; ?></span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-            <?php  } ?>
-
-        </ul>
-
-        <a href="<?php echo base_url(); ?>seeker/job/browse_jobs" class="button centered"><i class="fa fa-plus-circle"></i> Show More Jobs</a>
-        <div class="margin-bottom-55"></div>
-    </div>
-</div>
-
-<!-- Job Spotlight -->
-<div class="five columns">
-    <h3 class="margin-bottom-5">Job Spotlight</h3>
-
-    <!-- Navigation -->
-    <div class="showbiz-navigation">
-        <div id="showbiz_left_1" class="sb-navigation-left"><i class="fa fa-angle-left"></i></div>
-        <div id="showbiz_right_1" class="sb-navigation-right"><i class="fa fa-angle-right"></i></div>
-    </div>
-    <div class="clearfix"></div>
-
-    <!-- Showbiz Container -->
-    <div id="job-spotlight" class="showbiz-container">
-        <div class="showbiz" data-left="#showbiz_left_1" data-right="#showbiz_right_1" data-play="#showbiz_play_1">
-            <div class="overflowholder">
-
-                <ul>
-
-                    <li>
-                        <div class="job-spotlight">
-                            <a href="#"><h4>Web Developer                                            
-                                <span style="background-color:#27ae60;" class="full-time">Freelance</span>
-                            </h4></a>
-                            <span><i class="fa fa-briefcase"></i>Tech Co.</span>
-                            <span><i class="fa fa-map-marker"></i> Mohakhale, Dhaka</span>
-                            <span><i class="fa fa-money"></i>50k</span>
-                            <p>This is job description. Want to be a developer contact with us.</p>
-                            <a href="job-page.php" class="button">Apply For This Job</a>
-                        </div>
+                            <div class="clearfix"></div>
+                        </a>
                     </li>
+                <?php  } ?>
 
+            </ul>
 
-
-
-                </ul>
-                <div class="clearfix"></div>
-
-            </div>
-            <div class="clearfix"></div>
+            <a href="<?php echo base_url(); ?>seeker/job/browse_jobs" class="button centered"><i class="fa fa-plus-circle"></i> Show More Jobs</a>
+            <div class="margin-bottom-55"></div>
         </div>
     </div>
 
-</div>
+    <!-- Job Spotlight -->
+    <div class="five columns">
+        <h3 class="margin-bottom-5">Job Spotlight</h3>
+
+        <!-- Navigation -->
+        <div class="showbiz-navigation">
+            <div id="showbiz_left_1" class="sb-navigation-left"><i class="fa fa-angle-left"></i></div>
+            <div id="showbiz_right_1" class="sb-navigation-right"><i class="fa fa-angle-right"></i></div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- Showbiz Container -->
+        <div id="job-spotlight" class="showbiz-container">
+            <div class="showbiz" data-left="#showbiz_left_1" data-right="#showbiz_right_1" data-play="#showbiz_play_1">
+                <div class="overflowholder">
+
+                    <ul>
+
+                        <li>
+                            <div class="job-spotlight">
+                                <a href="#"><h4>Web Developer                                            
+                                    <span style="background-color:#27ae60;" class="full-time">Freelance</span>
+                                </h4></a>
+                                <span><i class="fa fa-briefcase"></i>Tech Co.</span>
+                                <span><i class="fa fa-map-marker"></i> Mohakhale, Dhaka</span>
+                                <span><i class="fa fa-money"></i>50k</span>
+                                <p>This is job description. Want to be a developer contact with us.</p>
+                                <a href="job-page.php" class="button">Apply For This Job</a>
+                            </div>
+                        </li>
+
+
+
+
+                    </ul>
+                    <div class="clearfix"></div>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <!-- Testimonials -->
