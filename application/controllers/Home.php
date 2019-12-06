@@ -30,6 +30,9 @@ class Home extends CI_Controller
         $this->db->order_by('tbl_job.job_id','desc');
         $this->db->limit(4);
         $data['front_jobs'] = $this->db->get('tbl_job')->result_object();
+        //echo '<pre>';
+       // print_r($_POST); exit;
+
 
         $data['jobcats'] = $this->db->order_by('jobcat_id','desc')->limit(8)->get('tbl_job_category')->result_object();
 

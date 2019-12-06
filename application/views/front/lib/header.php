@@ -89,6 +89,9 @@
                                         <li><a href="<?php echo base_url(); ?>company/job/manage_jobs">Manage Jobs</a></li>
                                         <li><a href="<?php echo base_url(); ?>company/application/manage_all_applications">Manage Applications</a></li>
 
+                                        <li><a href="<?php echo base_url(); ?>company/company/report">Report</a></li>
+
+                                        
                                         <?php else: ?>
 
                                             <li><a href="<?php echo base_url(); ?>provider_registration">Register</a></li>

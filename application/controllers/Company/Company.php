@@ -96,6 +96,19 @@ class Company extends CI_Controller
 
     /*
     !--------------------------------------------------------
+    !      Job Profile
+    !--------------------------------------------------------
+    */
+    public function report()
+    {
+        $this->load->view('front/lib/header');
+        $this->load->view('front/company/report/index');
+        $this->load->view('front/lib/footer');
+        
+    }
+
+    /*
+    !--------------------------------------------------------
     !      Company Password
     !--------------------------------------------------------
     */
